@@ -14,7 +14,11 @@ const icons = [
     url: "https://github.com/JakobClausen",
     name: "Github",
   },
-  { icon: "social-1_logo-twitter.svg", url: "", name: "Twitter" },
+  {
+    icon: "social-1_logo-twitter.svg",
+    url: "https://twitter.com/JakobClausenDev",
+    name: "Twitter",
+  },
 ];
 
 export const Content: React.FC = () => {
