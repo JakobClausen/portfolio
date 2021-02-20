@@ -9,7 +9,7 @@ type Item = {
 };
 interface ProjectExpandedProps {
   item: Item;
-  handleSelectedItem: (item: Item) => void;
+  handleSelectedItem: (item: Item | null) => void;
 }
 
 export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
@@ -17,16 +17,16 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   handleSelectedItem,
 }) => {
   return (
-    <motion.div
-      onClick={() => handleSelectedItem(null)}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.15 } }}
-      transition={{ duration: 0.2, delay: 0.15 }}
-      style={{ pointerEvents: "auto" }}
-      className="overlay"
-    >
-      {" "}
+    <>
+      <motion.div
+        onClick={() => handleSelectedItem(null)}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.15 } }}
+        transition={{ duration: 0.2, delay: 0.15 }}
+        style={{ pointerEvents: "auto" }}
+        className="overlay"
+      />
       <motion.div
         className="card-container open"
         layoutId={`card-container-${item.id}`}
@@ -34,6 +34,6 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
         <p>{item.title}</p>
         <p>{item.subtitle}</p>
       </motion.div>
-    </motion.div>
+    </>
   );
 };
