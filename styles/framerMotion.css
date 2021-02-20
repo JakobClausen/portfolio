@@ -1,7 +1,6 @@
 .card-container {
   width: 100%;
-  height: 250px;
-  background-color: white;
+  height: auto;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -31,5 +30,10 @@
 }
 
 .card-text {
+  height: 100%;
+  padding: 10px;
+  background-color: white;
+}
+.card-text.open {
   padding: 20px;
 }

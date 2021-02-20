@@ -29,7 +29,6 @@ export const ProjectList: React.FC<ProjectListProps> = ({
             />
             <motion.div className="card-text" layoutId={`card-text-${item.id}`}>
               <p>{item.title}</p>
-              <p>{item.subtitle}</p>
             </motion.div>
           </div>
         </motion.div>

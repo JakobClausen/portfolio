@@ -25,7 +25,10 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           className="card-img"
           layoutId={`card-img-${item.id}`}
         />
-        <motion.div className="card-text" layoutId={`card-text-${item.id}`}>
+        <motion.div
+          className="card-text open"
+          layoutId={`card-text-${item.id}`}
+        >
           <p>{item.title}</p>
           <p>{item.subtitle}</p>
         </motion.div>
