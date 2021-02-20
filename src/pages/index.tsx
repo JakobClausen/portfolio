@@ -1,11 +1,13 @@
 import Head from "next/head";
-import { Html } from "next/document";
-import { Box, Flex } from "@chakra-ui/react";
-import { Content } from "../components/Content";
+import { Box } from "@chakra-ui/react";
+import React from "react";
+import { Intro } from "../components/intro";
+import { Projects } from "../components/Projects";
+import { About } from "../components/About";
 
 const Home = () => {
   return (
-    <Box w="100%" h="100vh" bg="brand.100">
+    <Box w="100%" bg="brand.100" overflow="hidden">
       <Head>
         <title>Jakob Clausen</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -15,7 +17,9 @@ const Home = () => {
           content="Jakob Clausen. Wed developer in Gothenburg. Focusing on backend technologies as graphql and node js. Writing in typescript."
         />
       </Head>
-      <Content />
+      <Intro />
+      <Projects />
+      <About />
     </Box>
   );
 };

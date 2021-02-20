@@ -2555,6 +2555,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
+gsap@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.6.0.tgz#925f25370c698ce0f6ea563522da8f6b5ed21b0a"
+  integrity sha512-0P3syv1TmYr+A/VZ8UMFzw+s0XoaKSzzDFs8NqkXiJTXI4E/VTi0zRjPgxaPBpiUPPycgRnFjLDe0Tb4dRRf+w==
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
@@ -3976,7 +3981,14 @@ react-focus-lock@2.4.1:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-is@16.13.1, react-is@^16.7.0, react-is@^16.8.1:
+react-gsap@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-gsap/-/react-gsap-2.2.1.tgz#259f4307d66f536616f0ece311cd887ebb9a79f6"
+  integrity sha512-6T5cpOpihXsZSnM7fYEb96reZRK0iJGv8QgpHreFEw2BvokhkgziyhB2TkXSWaDq4Mwlx0Piys9DiHErzRwp+A==
+  dependencies:
+    react-is "^16.13.1"
+
+react-is@16.13.1, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -4004,6 +4016,16 @@ react-remove-scroll@2.4.0:
     tslib "^1.0.0"
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
+
+react-scrollmagic@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.2.0.tgz#6e5ca428411221605ce4edb667819394c6a4e6c0"
+  integrity sha512-2DlzgJVuFohka0HG71haN4fugXoNUIZ4xT0mb4k03Xx1CyGXqPMxKekFEGhVjYyqpQmibtdTOfh49ZsHzuNVtw==
+
+react-simple-animate@^3.3.11:
+  version "3.3.11"
+  resolved "https://registry.yarnpkg.com/react-simple-animate/-/react-simple-animate-3.3.11.tgz#04bb03ffe707e4e7cab4e22a03a93f20415b39de"
+  integrity sha512-kt2SKJ4Gw3klTmRbik/9R741fPiVRVlxkXvV0c3uu8NqOtdc5ITis62WcdiKH6U5QhCjXNfLW9lrbQ4cAYujyA==
 
 react-style-singleton@^2.1.0:
   version "2.1.1"

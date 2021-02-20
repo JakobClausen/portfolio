@@ -9,16 +9,19 @@ const breakpoints = {
 
 const colors = {
   brand: {
-    100: "#141414",
+    100: "#1C1919",
   },
   text: {
-    100: "#f8f8ff",
+    100: "#FBF7EE",
+  },
+  offColor: {
+    100: "#E2C10A",
   },
 };
 
 const fonts = {
-  heading: "'My Heading Font', sans-serif",
-  body: "'My Heading Font', sans-serif",
+  heading: "'Bebas Neue', sans-serif",
+  body: "'roboto', sans-serif",
 };
 
 export const theme = extendTheme({ breakpoints, colors, fonts });
