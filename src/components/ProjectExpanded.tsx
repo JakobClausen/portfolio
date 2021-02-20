@@ -20,14 +20,6 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
     <>
       <motion.div
         onClick={() => handleSelectedItem(null)}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: { duration: 0.15 } }}
-        transition={{ duration: 0.2, delay: 0.15 }}
-        style={{ pointerEvents: "auto" }}
-        className="overlay"
-      />
-      <motion.div
         className="card-container open"
         layoutId={`card-container-${item.id}`}
       >
