@@ -4,6 +4,7 @@ import React from "react";
 import { Intro } from "../components/intro";
 import { Projects } from "../components/Projects";
 import { About } from "../components/About";
+import { useRouter } from "next/router";
 
 const Home = () => {
   return (
