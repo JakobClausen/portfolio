@@ -3,13 +3,16 @@
   height: auto;
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 .card-container.open {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80%;
+  height: 85%;
   position: fixed;
   z-index: 1;
   overflow: hidden;
@@ -30,10 +33,42 @@
 }
 
 .card-text {
+  background-color: rgb(226, 226, 226);
   height: 100%;
-  padding: 10px;
-  background-color: white;
-}
-.card-text.open {
   padding: 20px;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 180px;
+  background-color: rgb(39, 39, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-img span {
+  color: green;
+}
+
+.portfolio-img p {
+  color: rgb(224, 224, 224);
+  font-family: "Ubuntu Mono";
+}
+
+.portfolio-img.open {
+  height: 230px;
+}
+
+.card-text-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+.card-text-title.open {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.card-text-description {
+  font-size: 14px;
 }

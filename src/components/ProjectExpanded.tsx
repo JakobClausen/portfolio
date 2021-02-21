@@ -19,18 +19,43 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
       layoutId={`card-container-${item.id}`}
     >
       <div className="card-content">
-        <motion.img
-          src={item.img}
-          alt="Picture of the author"
-          className="card-img"
-          layoutId={`card-img-${item.id}`}
-        />
-        <motion.div
-          className="card-text open"
-          layoutId={`card-text-${item.id}`}
-        >
-          <p>{item.title}</p>
-          <p>{item.subtitle}</p>
+        {item.img ? (
+          <motion.img
+            src={item.img}
+            alt="Picture of the author"
+            className="card-img"
+            layoutId={`card-img-${item.id}`}
+          />
+        ) : (
+          <motion.div
+            className="portfolio-img"
+            layoutId={`portfolio-img-${item.id}`}
+          >
+            <motion.p layoutId={`portfolio-img-text-${item.id}`}>
+              <span>this</span>.portfolio
+            </motion.p>
+          </motion.div>
+        )}
+
+        <motion.div className="card-text" layoutId={`card-text-${item.id}`}>
+          <motion.p
+            className="card-text-title open"
+            layoutId={`card-text-title-${item.id}`}
+            initial={{ x: "0%", opacity: 0 }}
+            animate={{ x: "100%", opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {item.title}
+          </motion.p>
+          <motion.p
+            className="card-text-description"
+            layoutId={`card-text-description-${item.id}`}
+            initial={{ x: "0%", opacity: 0 }}
+            animate={{ x: "100%", opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {item.subtitle}
+          </motion.p>
         </motion.div>
         <Flex position="absolute" bottom="30" w="100%" justify="center">
           <img src="/icons/github.svg"></img>

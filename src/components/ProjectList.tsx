@@ -1,4 +1,4 @@
-import { Box, Grid } from "@chakra-ui/react";
+import { Box, Text, Grid } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { data } from "../data/projects";
@@ -12,7 +12,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({
   handleSelectedItem,
 }) => {
   return (
-    <Grid gap={4} p="70px">
+    <Grid gap={4} p="50px">
       {data.map((item) => (
         <motion.div
           key={item.title}
@@ -21,15 +21,25 @@ export const ProjectList: React.FC<ProjectListProps> = ({
           layoutId={`card-container-${item.id}`}
         >
           <div className="card-content">
-            <motion.img
-              src={item.img}
-              alt="Picture of the author"
-              className="card-img"
-              layoutId={`card-img-${item.id}`}
-            />
-            <motion.div className="card-text" layoutId={`card-text-${item.id}`}>
-              <p>{item.title}</p>
-            </motion.div>
+            {item.img ? (
+              <motion.img
+                src={item.img}
+                alt="Picture of the author"
+                className="card-img"
+                layoutId={`card-img-${item.id}`}
+              />
+            ) : (
+              <motion.div
+                className="portfolio-img"
+                layoutId={`portfolio-img-${item.id}`}
+              >
+                <motion.p layoutId={`portfolio-img-text-${item.id}`}>
+                  <span>this</span>.portfolio
+                </motion.p>
+              </motion.div>
+            )}
+
+            <motion.div layoutId={`card-text-${item.id}`} />
           </div>
         </motion.div>
       ))}

@@ -22,6 +22,7 @@ const colors = {
 const fonts = {
   heading: "'Bebas Neue', sans-serif",
   body: "'roboto', sans-serif",
+  code: "'Source Code Pro', monospace",
 };
 
 export const theme = extendTheme({ breakpoints, colors, fonts });
