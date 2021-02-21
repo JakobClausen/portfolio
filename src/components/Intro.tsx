@@ -5,6 +5,15 @@ import { Tween, Timeline } from "react-gsap";
 export const Intro: React.FC = () => {
   return (
     <Box w="100%" h="100vh">
+      <Box
+        position="fixed"
+        top="0"
+        left="0"
+        right="0"
+        h="150px"
+        bgGradient="linear(brand.100 35%, transparent 90%)"
+        zIndex={9}
+      />
       <Controller>
         <Scene triggerHook="onLeave" duration={"44%"} triggerElement="#ye">
           {(progress) => {
@@ -35,7 +44,11 @@ export const Intro: React.FC = () => {
                     ease: "slow(0.7, 0.7, false)",
                   }}
                 >
-                  <Box position={progress >= 1 ? "fixed" : "static"} top={-100}>
+                  <Box
+                    position={progress >= 1 ? "fixed" : "static"}
+                    top={-100}
+                    zIndex={10}
+                  >
                     <Heading as="h1" fontSize="8em" color="#cecece">
                       JAKOB
                     </Heading>
