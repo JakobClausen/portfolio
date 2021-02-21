@@ -76,3 +76,24 @@
   font-size: 14px;
   white-space: pre-line;
 }
+
+/* slider */
+
+.example-container img {
+  background-color: white;
+  border: #000 1px;
+  border-radius: 30px;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.example-container .drag-area {
+  background: #1c1919;
+  position: relative;
+  width: 300px;
+  height: 45px;
+  border-radius: 30px;
+}

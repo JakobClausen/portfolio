@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Item } from "../types/item";
+import { SliderLink } from "./SliderLink";
 
 interface ProjectExpandedProps {
   item: Item;
@@ -14,7 +15,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
 }) => {
   return (
     <motion.div
-      onClick={() => handleSelectedItem(null)}
+      // onClick={() => handleSelectedItem(null)}
       className="card-container open"
       layoutId={`card-container-${item.id}`}
     >
@@ -57,9 +58,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             {item.description}
           </motion.p>
         </motion.div>
-        <Flex position="absolute" bottom="30" w="100%" justify="center">
-          <img src="/icons/github.svg"></img>
-        </Flex>
+        <SliderLink />
       </div>
     </motion.div>
   );

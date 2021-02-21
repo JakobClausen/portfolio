@@ -12,7 +12,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({
   handleSelectedItem,
 }) => {
   return (
-    <Grid gap={4} p="50px">
+    <Grid gap={4} p="0px 50px 50px 50px">
       {data.map((item) => (
         <motion.div
           key={item.title}
