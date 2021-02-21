@@ -50,11 +50,11 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           <motion.p
             className="card-text-description"
             layoutId={`card-text-description-${item.id}`}
-            initial={{ x: "0%", opacity: 0 }}
+            initial={{ x: "50%", opacity: 0 }}
             animate={{ x: "100%", opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            {item.subtitle}
+            {item.description}
           </motion.p>
         </motion.div>
         <Flex position="absolute" bottom="30" w="100%" justify="center">
