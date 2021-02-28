@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Item } from "../types/item";
-import { SliderLink } from "./SliderLink";
+import disableScroll from "disable-scroll";
 
 interface ProjectExpandedProps {
   item: Item;
@@ -15,7 +15,10 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
 }) => {
   return (
     <motion.div
-      // onClick={() => handleSelectedItem(null)}
+      onClick={() => {
+        handleSelectedItem(null);
+        disableScroll.off();
+      }}
       className="card-container open"
       layoutId={`card-container-${item.id}`}
     >
@@ -58,7 +61,6 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             {item.description}
           </motion.p>
         </motion.div>
-        <SliderLink />
       </div>
     </motion.div>
   );

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { data } from "../data/projects";
 import { Item } from "../types/item";
+import disableScroll from "disable-scroll";
 
 interface ProjectListProps {
   handleSelectedItem: (item: Item) => void;
@@ -16,7 +17,10 @@ export const ProjectList: React.FC<ProjectListProps> = ({
       {data.map((item) => (
         <motion.div
           key={item.title}
-          onClick={() => handleSelectedItem(item)}
+          onClick={() => {
+            handleSelectedItem(item);
+            disableScroll.on();
+          }}
           className="card-container"
           layoutId={`card-container-${item.id}`}
         >
