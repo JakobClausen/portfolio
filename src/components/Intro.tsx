@@ -16,7 +16,7 @@ export const Intro: React.FC = () => {
       />
       <Controller>
         <Scene triggerHook="onLeave" duration={"44%"} triggerElement="#ye">
-          {(progress) => {
+          {(progress: number) => {
             return (
               <Timeline
                 totalProgress={progress}
