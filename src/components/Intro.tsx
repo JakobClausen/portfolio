@@ -4,7 +4,7 @@ import { Tween, Timeline } from "react-gsap";
 
 export const Intro: React.FC = () => {
   return (
-    <Box w="100vw" h="100vh">
+    <Box w="100%" h="100vh">
       <Box
         position="fixed"
         top="0"
