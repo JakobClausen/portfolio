@@ -58,7 +58,7 @@ export const Intro: React.FC = () => {
                     </Heading>
                     <Heading
                       as="h1"
-                      fontSize="clamp(50px, 35vw, 200px)"
+                      fontSize="clamp(3vw, 35vw, 200px)"
                       color="#cecece"
                       marginTop="-60px"
                     >
