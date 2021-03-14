@@ -49,12 +49,16 @@ export const Intro: React.FC = () => {
                     top={-100}
                     zIndex={10}
                   >
-                    <Heading as="h1" fontSize="8em" color="#cecece">
+                    <Heading
+                      as="h1"
+                      fontSize="clamp(50px, 35vw, 200px)"
+                      color="#cecece"
+                    >
                       JAKOB
                     </Heading>
                     <Heading
                       as="h1"
-                      fontSize="8em"
+                      fontSize="clamp(50px, 35vw, 200px)"
                       color="#cecece"
                       marginTop="-60px"
                     >
@@ -72,12 +76,12 @@ export const Intro: React.FC = () => {
                       }}
                     >
                       <Text
-                        fontSize="1em"
-                        color="#FF4500"
-                        marginTop="-25px"
+                        fontSize={["sm", "md", "lg", "xl"]}
+                        color="#b33a0f"
+                        marginTop="-30px"
                         marginLeft="5px"
                       >
-                        Software Engineer
+                        Full Stack Developer
                       </Text>
                     </Tween>
                   </Box>
