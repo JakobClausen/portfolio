@@ -7,19 +7,19 @@ export const data = [
     techStack: [
       {
         title: "Next js",
-        width: "60%",
+        width: "50%",
         backgroundColor: "#171717",
         borderStyle: { borderBottomLeftRadius: 5, borderTopLeftRadius: 5 },
       },
       {
-        title: "Framer motion",
+        title: "Framer",
         width: "20%",
         backgroundColor: "#E902B5",
       },
-      { title: "GSAP", width: "10%", backgroundColor: "#86C03C" },
+      { title: "GSAP", width: "15%", backgroundColor: "#86C03C" },
       {
-        title: "Scroll Magic",
-        width: "10%",
+        title: "Scroll",
+        width: "15%",
         backgroundColor: "#6186D5",
         borderStyle: { borderBottomRightRadius: 5, borderTopRightRadius: 5 },
       },
@@ -37,10 +37,10 @@ export const data = [
         backgroundColor: "#282D32",
         borderStyle: { borderBottomLeftRadius: 5, borderTopLeftRadius: 5 },
       },
-      { title: "Chakra ui", width: "20%", backgroundColor: "#2CBFB3" },
+      { title: "Chakra", width: "20%", backgroundColor: "#2CBFB3" },
       { title: "Apollo", width: "10%", backgroundColor: "#333333" },
       {
-        title: "Code-gen",
+        title: "Code",
         width: "10%",
         backgroundColor: "#D129A1",
         borderStyle: { borderBottomRightRadius: 5, borderTopRightRadius: 5 },

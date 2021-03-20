@@ -13,7 +13,7 @@ export const ProjectTechTimeline: React.FC<ProjectTechTimelineProps> = ({
   return (
     <motion.div
       className="timeline-container"
-      initial={{ width: "0%", opacity: 0.7 }}
+      initial={{ width: "0%", opacity: 0 }}
       animate={{ width: "100%", opacity: 1 }}
       transition={{
         type: "spring",
