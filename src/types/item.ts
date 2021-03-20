@@ -2,5 +2,6 @@ export type Item = {
   id: number;
   title: string;
   description: string;
-  img?: string;
 };
+
+export type ProjectInfo = { item: Item; children: React.ReactNode } | null;

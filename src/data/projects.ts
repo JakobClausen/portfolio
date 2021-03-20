@@ -10,13 +10,11 @@ export const data = [
     title: "Gym hub",
     description:
       "This website is built with NJext js in typescript. \n My goals was to try some different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For most of the styling I opted for Chakra UI components.",
-    img: "/images/timer.png",
   },
   {
     id: 3,
     title: "test",
     description:
       "This website is built with NJext js in typescript. \n My goals was to try some different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For most of the styling I opted for Chakra UI components.",
-    img: "/images/backofficeComp.png",
   },
 ];
