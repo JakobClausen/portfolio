@@ -80,6 +80,10 @@
   white-space: pre-line;
 }
 
+.timeline-container {
+  margin-bottom: 20px;
+}
+
 .project-bottom-container {
   left: 0;
   right: 0;

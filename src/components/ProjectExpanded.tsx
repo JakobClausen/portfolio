@@ -16,6 +16,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
 }) => {
   if (!projectInfo) return null;
   const { item, children } = projectInfo;
+  console.log(item);
   return (
     <motion.div
       onClick={() => {
@@ -54,7 +55,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           animate={{ x: "100%", opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <ProjectTechTimeline />
+          <ProjectTechTimeline techStack={item.techStack} />
           <motion.img
             src="/icons/github.svg"
             alt="Github logo"
