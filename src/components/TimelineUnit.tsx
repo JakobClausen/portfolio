@@ -20,7 +20,8 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 1, delay: 2 }}
+        style={{ textAlign: "center", marginBottom: 20 }}
       >
         {title}
       </motion.p>

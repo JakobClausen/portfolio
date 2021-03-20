@@ -14,7 +14,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({
   return (
     <Grid gap={4} p="0px 50px 50px 50px">
       <ProjectThumbnail item={data[0]} handleSelectedItem={handleSelectedItem}>
-        <span>this</span>.projects
+        <span>this</span>.portfolio
       </ProjectThumbnail>
       <ProjectThumbnail item={data[1]} handleSelectedItem={handleSelectedItem}>
         Gym hub <br /> <span>frontend</span>
