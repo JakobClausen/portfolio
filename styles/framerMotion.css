@@ -39,6 +39,7 @@
 .card-text {
   background-color: rgb(226, 226, 226);
   height: 100%;
+  width: 100%;
   padding: 20px;
 }
 
@@ -79,12 +80,14 @@
   white-space: pre-line;
 }
 
-.card-github-container {
+.project-bottom-container {
+  left: 0;
+  right: 0;
   position: absolute;
   bottom: 20px;
-  border-bottom: 1px solid #000;
+  padding: 20px;
 }
-.card-github {
+.github-icon {
   width: 20px;
   display: inline-block;
 }

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
 import { MotionP } from "./MotionP";
+import { ProjectTechTimeline } from "./ProjectTechTimeline";
 
 interface ProjectExpandedProps {
   projectInfo: ProjectInfo;
@@ -45,28 +46,24 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             className="card-text-description"
             payload={item.description}
           />
-          <motion.div
-            className="card-github-container"
-            layoutId={`card-github-container-${item.id}`}
+        </motion.div>
+        <motion.div
+          className="project-bottom-container"
+          layoutId={`project-bottom-container-${item.id}`}
+          initial={{ x: "0%", opacity: 0 }}
+          animate={{ x: "100%", opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <ProjectTechTimeline />
+          <motion.img
+            src="/icons/github.svg"
+            alt="Github logo"
+            className="github-icon"
+            layoutId={`github-icon-${item.id}`}
             initial={{ x: "0%", opacity: 0 }}
             animate={{ x: "100%", opacity: 1 }}
             exit={{ opacity: 0 }}
-          >
-            <motion.img
-              src="/icons/github.svg"
-              alt="Github logo"
-              className="card-github"
-              layoutId={`card-github-${item.id}`}
-              initial={{ x: "0%", opacity: 0 }}
-              animate={{ x: "100%", opacity: 1 }}
-              exit={{ opacity: 0 }}
-            />
-            <MotionP
-              className="card-text-github"
-              layoutId={`card-text-github-${item.id}`}
-              payload={"Github"}
-            />
-          </motion.div>
+          />
         </motion.div>
       </div>
     </motion.div>
