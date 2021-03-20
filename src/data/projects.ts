@@ -7,14 +7,14 @@ export const data = [
   },
   {
     id: 2,
-    title: "Gym hub",
+    title: "Gym hub Frontend",
     description:
-      "This website is built with NJext js in typescript. \n My goals was to try some different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For most of the styling I opted for Chakra UI components.",
+      "A service that help digitalize the gym / crossfit class experiense.\n Making a digital version of a whiteboard and timer, that makes it easy for instructors & class participants to understand the class structure.",
   },
   {
     id: 3,
-    title: "test",
+    title: "Gym hub Backend",
     description:
-      "This website is built with NJext js in typescript. \n My goals was to try some different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For most of the styling I opted for Chakra UI components.",
+      "This is the backend / server for the Gym hub service. \n Written in Node js (typescript) & express, using Graphql as a query language. \n Typeorm as an ORM.",
   },
 ];

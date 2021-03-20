@@ -17,10 +17,10 @@ export const ProjectList: React.FC<ProjectListProps> = ({
         <span>this</span>.projects
       </ProjectThumbnail>
       <ProjectThumbnail item={data[1]} handleSelectedItem={handleSelectedItem}>
-        Gym hub <br /> <span>(frontend)</span>
+        Gym hub <br /> <span>frontend</span>
       </ProjectThumbnail>
       <ProjectThumbnail item={data[2]} handleSelectedItem={handleSelectedItem}>
-        Gym hub <br /> <span>(backed)</span>
+        Gym hub <br /> <span>backend</span>
       </ProjectThumbnail>
     </Grid>
   );
