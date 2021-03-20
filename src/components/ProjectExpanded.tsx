@@ -1,19 +1,20 @@
 import React from "react";
-import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { Item } from "../types/item";
+import { ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
 import { MotionP } from "./MotionP";
 
 interface ProjectExpandedProps {
-  item: Item;
-  handleSelectedItem: (item: Item | null) => void;
+  projectInfo: ProjectInfo;
+  handleSelectedItem: (projectInfo: ProjectInfo) => void;
 }
 
 export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
-  item,
+  projectInfo,
   handleSelectedItem,
 }) => {
+  if (!projectInfo) return null;
+  const { item, children } = projectInfo;
   return (
     <motion.div
       onClick={() => {
@@ -24,23 +25,14 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
       layoutId={`card-container-${item.id}`}
     >
       <div className="card-content">
-        {item.img ? (
-          <motion.img
-            src={item.img}
-            alt="Picture of the author"
-            className="card-img"
-            layoutId={`card-img-${item.id}`}
-          />
-        ) : (
-          <motion.div
-            className="portfolio-img"
-            layoutId={`portfolio-img-${item.id}`}
-          >
-            <motion.p layoutId={`portfolio-img-text-${item.id}`}>
-              <span>this</span>.portfolio
-            </motion.p>
-          </motion.div>
-        )}
+        <motion.div
+          className="portfolio-img"
+          layoutId={`portfolio-img-${item.id}`}
+        >
+          <motion.p layoutId={`portfolio-img-text-${item.id}`}>
+            {children}
+          </motion.p>
+        </motion.div>
 
         <motion.div className="card-text" layoutId={`card-text-${item.id}`}>
           <MotionP
