@@ -22,9 +22,10 @@ export const ProjectTechTimeline: React.FC<ProjectTechTimelineProps> = ({
         delay: 1,
       }}
     >
-      {techStack.map(({ title, borderStyle, width, backgroundColor }) => (
+      {techStack.map(({ title, borderStyle, width, icon, backgroundColor }) => (
         <TimelineUnit
           key={title}
+          icon={icon}
           title={title}
           style={{
             ...borderStyle,

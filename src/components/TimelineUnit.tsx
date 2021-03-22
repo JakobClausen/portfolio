@@ -4,11 +4,13 @@ import React from "react";
 
 interface TimelineUnitProps {
   title: string;
+  icon: string;
   style: MotionStyle;
 }
 
 export const TimelineUnit: React.FC<TimelineUnitProps> = ({
   title,
+  icon,
   style: { width, ...restStyle },
 }) => {
   return (
@@ -25,14 +27,21 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
         }}
       >
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <motion.p
+          <motion.img
+            style={{ width: 30, height: 30, marginBottom: 10 }}
+            src={icon}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2, delay: 2.5 }}
+          />
+          {/* <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2, delay: 2.5 }}
             style={{ textAlign: "center", marginBottom: 20 }}
           >
             {title}
-          </motion.p>
+          </motion.p> */}
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <motion.div
@@ -45,7 +54,7 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
               delay: 2,
             }}
             style={{
-              width: "5px",
+              width: "1px",
               backgroundColor: restStyle.backgroundColor,
             }}
           />

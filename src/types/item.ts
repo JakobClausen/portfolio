@@ -11,6 +11,7 @@ type BorderStyle =
 
 export type TechStack = {
   title: string;
+  icon: string;
   width: string;
   backgroundColor: string;
   borderStyle?: BorderStyle;
