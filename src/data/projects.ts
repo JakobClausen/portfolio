@@ -42,7 +42,7 @@ export const data = [
       {
         title: "CRA",
         icon: "/images/react.svg",
-        width: "60%",
+        width: "50%",
         backgroundColor: "#04D8FE",
         borderStyle: { borderBottomLeftRadius: 5, borderTopLeftRadius: 5 },
       },
@@ -55,13 +55,13 @@ export const data = [
       {
         title: "Apollo",
         icon: "/images/apollo.svg",
-        width: "10%",
+        width: "15%",
         backgroundColor: "#333333",
       },
       {
         title: "Code",
-        icon: "/images/ts-icon.svg",
-        width: "10%",
+        icon: "/images/codeGen.png",
+        width: "15%",
         backgroundColor: "#D129A1",
         borderStyle: { borderBottomRightRadius: 5, borderTopRightRadius: 5 },
       },
@@ -81,14 +81,15 @@ export const data = [
         borderStyle: { borderBottomLeftRadius: 5, borderTopLeftRadius: 5 },
       },
       {
-        title: "TypeORM",
-        icon: "/images/typeorm.png",
+        title: "GraphQL",
+        icon: "/images/graphql.svg",
         width: "15%",
         backgroundColor: "#FE0C05",
       },
       {
-        title: "GraphQL",
-        icon: "/images/graphql.svg",
+        title: "TypeORM",
+        icon: "/images/typeorm.png",
+
         width: "15%",
         backgroundColor: "#e535ab",
       },
