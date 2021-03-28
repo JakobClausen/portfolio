@@ -3,28 +3,48 @@ import { motion } from "framer-motion";
 import { ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
 import { MotionP } from "./MotionP";
+import { ProjectTechTimeline } from "./ProjectTechTimeline";
+import { Box } from "@chakra-ui/react";
 
 interface ProjectExpandedProps {
   projectInfo: ProjectInfo;
-  handleSelectedItem: (projectInfo: ProjectInfo) => void;
+  handleSelectedItem: (projectInfo: ProjectInfo | null) => void;
 }
 
 export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   projectInfo,
   handleSelectedItem,
 }) => {
-  if (!projectInfo) return null;
   const { item, children } = projectInfo;
   return (
     <motion.div
-      onClick={() => {
-        handleSelectedItem(null);
-        disableScroll.off();
-      }}
       className="card-container open"
       layoutId={`card-container-${item.id}`}
     >
-      <div className="card-content">
+      <motion.div
+        className="card-content open"
+        layoutId={`card-content-${item.id}`}
+      >
+        <Box
+          position="absolute"
+          top={0}
+          right={0}
+          onClick={() => {
+            handleSelectedItem(null);
+            disableScroll.off();
+          }}
+        >
+          <motion.img
+            src="/icons/close.png"
+            alt="Close logo"
+            className="close-icon"
+            layoutId={`close-icon-${item.id}`}
+            transition={{ duration: 0.1, delay: 0.8 }}
+            initial={{ x: 50, opacity: 0.5 }}
+            animate={{ x: 0, opacity: 0.8 }}
+            exit={{ x: 50, opacity: 0 }}
+          />
+        </Box>
         <motion.div
           className="portfolio-img"
           layoutId={`portfolio-img-${item.id}`}
@@ -34,41 +54,38 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           </motion.p>
         </motion.div>
 
-        <motion.div className="card-text" layoutId={`card-text-${item.id}`}>
+        <motion.div className="card-text">
+          <MotionP className="card-text-title open" payload={item.title} />
           <MotionP
-            className="card-text-title open"
-            layoutId={`card-text-title-${item.id}`}
-            payload={item.title}
-          />
-          <MotionP
-            layoutId={`card-text-description-${item.id}`}
             className="card-text-description"
             payload={item.description}
           />
-          <motion.div
-            className="card-github-container"
-            layoutId={`card-github-container-${item.id}`}
-            initial={{ x: "0%", opacity: 0 }}
-            animate={{ x: "100%", opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
+        </motion.div>
+        <motion.div
+          className="project-bottom-container"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <ProjectTechTimeline techStack={item.techStack} />
+          <Box display="flex" justifyContent="center" mt="40px">
             <motion.img
               src="/icons/github.svg"
               alt="Github logo"
-              className="card-github"
-              layoutId={`card-github-${item.id}`}
-              initial={{ x: "0%", opacity: 0 }}
-              animate={{ x: "100%", opacity: 1 }}
-              exit={{ opacity: 0 }}
+              className="github-icon"
+              transition={{
+                type: "spring",
+                stiffness: 140,
+                duration: 0.1,
+                delay: 3,
+              }}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
             />
-            <MotionP
-              className="card-text-github"
-              layoutId={`card-text-github-${item.id}`}
-              payload={"Github"}
-            />
-          </motion.div>
+          </Box>
         </motion.div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

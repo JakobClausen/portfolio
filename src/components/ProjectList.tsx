@@ -1,11 +1,11 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
 import { data } from "../data/projects";
-import { Item, ProjectInfo } from "../types/item";
+import { ProjectInfo } from "../types/item";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 
 interface ProjectListProps {
-  handleSelectedItem: (projectInfo: ProjectInfo) => void;
+  handleSelectedItem: (projectInfo: ProjectInfo | null) => void;
 }
 
 export const ProjectList: React.FC<ProjectListProps> = ({
@@ -14,13 +14,13 @@ export const ProjectList: React.FC<ProjectListProps> = ({
   return (
     <Grid gap={4} p="0px 50px 50px 50px">
       <ProjectThumbnail item={data[0]} handleSelectedItem={handleSelectedItem}>
-        <span>this</span>.projects
+        <span>this</span>.portfolio
       </ProjectThumbnail>
       <ProjectThumbnail item={data[1]} handleSelectedItem={handleSelectedItem}>
-        Gym hub <br /> <span>(frontend)</span>
+        Gym hub <br /> <span>frontend</span>
       </ProjectThumbnail>
       <ProjectThumbnail item={data[2]} handleSelectedItem={handleSelectedItem}>
-        Gym hub <br /> <span>(backed)</span>
+        Gym hub <br /> <span>backend</span>
       </ProjectThumbnail>
     </Grid>
   );

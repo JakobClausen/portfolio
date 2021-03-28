@@ -23,7 +23,7 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
       className="card-container"
       layoutId={`card-container-${item.id}`}
     >
-      <div className="card-content">
+      <motion.div className="card-content" layoutId={`card-content-${item.id}`}>
         <motion.div
           className="portfolio-img"
           layoutId={`portfolio-img-${item.id}`}
@@ -32,9 +32,7 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
             {children}
           </motion.p>
         </motion.div>
-
-        <motion.div layoutId={`card-text-${item.id}`} />
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

@@ -2,6 +2,19 @@ export type Item = {
   id: number;
   title: string;
   description: string;
+  techStack: TechStack[];
 };
 
-export type ProjectInfo = { item: Item; children: React.ReactNode } | null;
+type BorderStyle =
+  | { borderBottomLeftRadius: 5; borderTopLeftRadius: 5 }
+  | { borderBottomRightRadius: 5; borderTopRightRadius: 5 };
+
+export type TechStack = {
+  title: string;
+  icon: string;
+  width: string;
+  backgroundColor: string;
+  borderStyle?: BorderStyle;
+};
+
+export type ProjectInfo = { item: Item; children: React.ReactNode };

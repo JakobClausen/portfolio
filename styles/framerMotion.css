@@ -39,6 +39,7 @@
 .card-text {
   background-color: rgb(226, 226, 226);
   height: 100%;
+  width: 100%;
   padding: 20px;
 }
 
@@ -79,17 +80,29 @@
   white-space: pre-line;
 }
 
-.card-github-container {
+.timeline-container {
+  margin-bottom: 20px;
+}
+
+.project-bottom-container {
+  left: 0;
+  right: 0;
   position: absolute;
   bottom: 20px;
-  border-bottom: 1px solid #000;
+  padding: 20px 20px 0px 20px;
 }
-.card-github {
-  width: 20px;
+.github-icon {
+  width: 45px;
   display: inline-block;
 }
 
 .card-text-github {
   display: inline-block;
   margin-left: 10px;
+}
+
+.close-icon {
+  margin: 20px;
+  width: 15px;
+  height: 15px;
 }

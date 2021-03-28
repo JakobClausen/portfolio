@@ -5,9 +5,9 @@ import { ProjectExpanded } from "./ProjectExpanded";
 import { ProjectList } from "./ProjectList";
 
 export const Projects: React.FC = () => {
-  const [selectedItem, setSelectedItem] = useState<ProjectInfo>(null);
+  const [selectedItem, setSelectedItem] = useState<ProjectInfo | null>(null);
 
-  const handleSelectedItem = (item: ProjectInfo) => {
+  const handleSelectedItem = (item: ProjectInfo | null) => {
     setSelectedItem(item);
   };
   return (
