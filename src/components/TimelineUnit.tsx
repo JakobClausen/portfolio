@@ -31,7 +31,12 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
             src={icon}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.2, delay: 2.5 }}
+            transition={{
+              type: "spring",
+              bounce: 0.5,
+              delay: 1.3,
+              duration: 1,
+            }}
           />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -40,9 +45,8 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
             animate={{ height: 25, opacity: 1 }}
             transition={{
               type: "spring",
-              stiffness: 55,
-              duration: 0.8,
-              delay: 2,
+              bounce: 0.25,
+              delay: 1,
             }}
             style={{
               width: "1px",

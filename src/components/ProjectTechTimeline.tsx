@@ -17,9 +17,8 @@ export const ProjectTechTimeline: React.FC<ProjectTechTimelineProps> = ({
       animate={{ width: "100%", opacity: 1 }}
       transition={{
         type: "spring",
-        stiffness: 55,
-        duration: 0.8,
-        delay: 1,
+        bounce: 0.25,
+        delay: 0.5,
       }}
     >
       {techStack.map(({ title, borderStyle, width, icon, backgroundColor }) => (

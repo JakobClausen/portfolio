@@ -1,7 +1,7 @@
 import React from "react";
 import { Item, ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
-import { motion } from "framer-motion";
+import { Box, Text } from "@chakra-ui/react";
 
 interface ProjectThumbnailProps {
   item: Item;
@@ -14,25 +14,13 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
   handleSelectedItem,
 }) => {
   return (
-    <motion.div
-      key={item.title}
+    <Box
       onClick={() => {
         handleSelectedItem({ item, children });
         disableScroll.on();
       }}
-      className="card-container"
-      layoutId={`card-container-${item.id}`}
     >
-      <motion.div className="card-content" layoutId={`card-content-${item.id}`}>
-        <motion.div
-          className="portfolio-img"
-          layoutId={`portfolio-img-${item.id}`}
-        >
-          <motion.p layoutId={`portfolio-img-text-${item.id}`}>
-            {children}
-          </motion.p>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+      <Text color="white">{item.title}</Text>
+    </Box>
   );
 };

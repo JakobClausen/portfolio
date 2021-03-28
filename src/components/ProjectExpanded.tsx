@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
@@ -11,26 +11,37 @@ interface ProjectExpandedProps {
   handleSelectedItem: (projectInfo: ProjectInfo | null) => void;
 }
 
+const variants = {
+  open: { y: 0 },
+  closed: { y: "100%" },
+};
+
 export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   projectInfo,
   handleSelectedItem,
 }) => {
+  const [close, setClose] = useState(false);
   const { item, children } = projectInfo;
   return (
     <motion.div
       className="card-container open"
-      layoutId={`card-container-${item.id}`}
+      transition={{ duration: 0.3 }}
+      initial={{ y: "100%" }}
+      animate={close ? "closed" : "open"}
+      variants={variants}
+      onAnimationComplete={() => {
+        if (close) {
+          handleSelectedItem(null);
+        }
+      }}
     >
-      <motion.div
-        className="card-content open"
-        layoutId={`card-content-${item.id}`}
-      >
+      <motion.div className="card-content open">
         <Box
           position="absolute"
           top={0}
           right={0}
           onClick={() => {
-            handleSelectedItem(null);
+            setClose(true);
             disableScroll.off();
           }}
         >
@@ -38,20 +49,18 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             src="/icons/close.png"
             alt="Close logo"
             className="close-icon"
-            layoutId={`close-icon-${item.id}`}
-            transition={{ duration: 0.1, delay: 0.8 }}
+            transition={{
+              type: "spring",
+              bounce: 0.25,
+              delay: 0.3,
+            }}
             initial={{ x: 50, opacity: 0.5 }}
             animate={{ x: 0, opacity: 0.8 }}
             exit={{ x: 50, opacity: 0 }}
           />
         </Box>
-        <motion.div
-          className="portfolio-img"
-          layoutId={`portfolio-img-${item.id}`}
-        >
-          <motion.p layoutId={`portfolio-img-text-${item.id}`}>
-            {children}
-          </motion.p>
+        <motion.div className="portfolio-img">
+          <motion.p>{children}</motion.p>
         </motion.div>
 
         <motion.div className="card-text">
@@ -75,9 +84,8 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
               className="github-icon"
               transition={{
                 type: "spring",
-                stiffness: 140,
-                duration: 0.1,
-                delay: 3,
+                bounce: 0.25,
+                delay: 1.7,
               }}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
