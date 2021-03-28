@@ -89,10 +89,10 @@
   right: 0;
   position: absolute;
   bottom: 20px;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
 }
 .github-icon {
-  width: 20px;
+  width: 45px;
   display: inline-block;
 }
 

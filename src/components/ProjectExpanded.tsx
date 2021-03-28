@@ -18,10 +18,6 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   const { item, children } = projectInfo;
   return (
     <motion.div
-      onClick={() => {
-        handleSelectedItem(null);
-        disableScroll.off();
-      }}
       className="card-container open"
       layoutId={`card-container-${item.id}`}
     >
@@ -29,7 +25,15 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
         className="card-content open"
         layoutId={`card-content-${item.id}`}
       >
-        <Box position="absolute" top={0} right={0}>
+        <Box
+          position="absolute"
+          top={0}
+          right={0}
+          onClick={() => {
+            handleSelectedItem(null);
+            disableScroll.off();
+          }}
+        >
           <motion.img
             src="/icons/close.png"
             alt="Close logo"
@@ -64,14 +68,22 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           exit={{ opacity: 0 }}
         >
           <ProjectTechTimeline techStack={item.techStack} />
-          <motion.img
-            src="/icons/github.svg"
-            alt="Github logo"
-            className="github-icon"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          />
+          <Box display="flex" justifyContent="center" mt="40px">
+            <motion.img
+              src="/icons/github.svg"
+              alt="Github logo"
+              className="github-icon"
+              transition={{
+                type: "spring",
+                stiffness: 140,
+                duration: 0.1,
+                delay: 3,
+              }}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+            />
+          </Box>
         </motion.div>
       </motion.div>
     </motion.div>
