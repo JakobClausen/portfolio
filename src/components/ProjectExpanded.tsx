@@ -27,6 +27,16 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
       layoutId={`card-container-${item.id}`}
     >
       <div className="card-content">
+        <motion.img
+          src="/icons/close.png"
+          alt="Close logo"
+          className="close-icon"
+          layoutId={`close-icon-${item.id}`}
+          transition={{ duration: 0.1, delay: 0.8 }}
+          initial={{ x: 50, opacity: 0.5 }}
+          animate={{ x: 0, opacity: 0.8 }}
+          exit={{ x: 50, opacity: 0 }}
+        />
         <motion.div
           className="portfolio-img"
           layoutId={`portfolio-img-${item.id}`}

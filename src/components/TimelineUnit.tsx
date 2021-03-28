@@ -34,14 +34,6 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2, delay: 2.5 }}
           />
-          {/* <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.2, delay: 2.5 }}
-            style={{ textAlign: "center", marginBottom: 20 }}
-          >
-            {title}
-          </motion.p> */}
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <motion.div
