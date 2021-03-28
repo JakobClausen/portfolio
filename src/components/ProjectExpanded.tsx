@@ -4,19 +4,18 @@ import { ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
 import { MotionP } from "./MotionP";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
+import { Box } from "@chakra-ui/react";
 
 interface ProjectExpandedProps {
   projectInfo: ProjectInfo;
-  handleSelectedItem: (projectInfo: ProjectInfo) => void;
+  handleSelectedItem: (projectInfo: ProjectInfo | null) => void;
 }
 
 export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   projectInfo,
   handleSelectedItem,
 }) => {
-  if (!projectInfo) return null;
   const { item, children } = projectInfo;
-  console.log(item);
   return (
     <motion.div
       onClick={() => {
@@ -26,17 +25,22 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
       className="card-container open"
       layoutId={`card-container-${item.id}`}
     >
-      <div className="card-content">
-        <motion.img
-          src="/icons/close.png"
-          alt="Close logo"
-          className="close-icon"
-          layoutId={`close-icon-${item.id}`}
-          transition={{ duration: 0.1, delay: 0.8 }}
-          initial={{ x: 50, opacity: 0.5 }}
-          animate={{ x: 0, opacity: 0.8 }}
-          exit={{ x: 50, opacity: 0 }}
-        />
+      <motion.div
+        className="card-content open"
+        layoutId={`card-content-${item.id}`}
+      >
+        <Box position="absolute" top={0} right={0}>
+          <motion.img
+            src="/icons/close.png"
+            alt="Close logo"
+            className="close-icon"
+            layoutId={`close-icon-${item.id}`}
+            transition={{ duration: 0.1, delay: 0.8 }}
+            initial={{ x: 50, opacity: 0.5 }}
+            animate={{ x: 0, opacity: 0.8 }}
+            exit={{ x: 50, opacity: 0 }}
+          />
+        </Box>
         <motion.div
           className="portfolio-img"
           layoutId={`portfolio-img-${item.id}`}
@@ -46,23 +50,17 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           </motion.p>
         </motion.div>
 
-        <motion.div className="card-text" layoutId={`card-text-${item.id}`}>
+        <motion.div className="card-text">
+          <MotionP className="card-text-title open" payload={item.title} />
           <MotionP
-            className="card-text-title open"
-            layoutId={`card-text-title-${item.id}`}
-            payload={item.title}
-          />
-          <MotionP
-            layoutId={`card-text-description-${item.id}`}
             className="card-text-description"
             payload={item.description}
           />
         </motion.div>
         <motion.div
           className="project-bottom-container"
-          layoutId={`project-bottom-container-${item.id}`}
-          initial={{ x: "0%", opacity: 0 }}
-          animate={{ x: "100%", opacity: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <ProjectTechTimeline techStack={item.techStack} />
@@ -70,13 +68,12 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             src="/icons/github.svg"
             alt="Github logo"
             className="github-icon"
-            layoutId={`github-icon-${item.id}`}
-            initial={{ x: "0%", opacity: 0 }}
-            animate={{ x: "100%", opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           />
         </motion.div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

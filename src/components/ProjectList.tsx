@@ -1,11 +1,11 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
 import { data } from "../data/projects";
-import { Item, ProjectInfo } from "../types/item";
+import { ProjectInfo } from "../types/item";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 
 interface ProjectListProps {
-  handleSelectedItem: (projectInfo: ProjectInfo) => void;
+  handleSelectedItem: (projectInfo: ProjectInfo | null) => void;
 }
 
 export const ProjectList: React.FC<ProjectListProps> = ({

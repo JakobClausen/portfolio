@@ -102,9 +102,6 @@
 }
 
 .close-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
   margin: 20px;
   width: 15px;
   height: 15px;

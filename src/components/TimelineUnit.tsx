@@ -9,7 +9,6 @@ interface TimelineUnitProps {
 }
 
 export const TimelineUnit: React.FC<TimelineUnitProps> = ({
-  title,
   icon,
   style: { width, ...restStyle },
 }) => {

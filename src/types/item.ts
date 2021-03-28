@@ -17,4 +17,4 @@ export type TechStack = {
   borderStyle?: BorderStyle;
 };
 
-export type ProjectInfo = { item: Item; children: React.ReactNode } | null;
+export type ProjectInfo = { item: Item; children: React.ReactNode };
