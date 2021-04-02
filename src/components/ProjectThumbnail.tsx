@@ -2,32 +2,36 @@ import React from "react";
 import { Item, ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
 import { Box, Heading } from "@chakra-ui/react";
+import { Tween } from "react-gsap";
 
 interface ProjectThumbnailProps {
   item: Item;
   handleSelectedItem: (projectInfo: ProjectInfo) => void;
+  tweenSettings: { from: { x: string }; to: { x: string; ease: string } };
 }
 
 export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
   children,
   item,
   handleSelectedItem,
+  tweenSettings,
 }) => {
   return (
-    <Box
-      onClick={() => {
-        handleSelectedItem({ item, children });
-        disableScroll.on();
-      }}
-    >
-      <Heading
-        as="h3"
-        fontSize="clamp(50px, 10vw, 50px)"
-        color="#cecece"
-        cursor="pointer"
-      >
-        {item.title}
-      </Heading>
+    <Box mt={10}>
+      <Tween position={0} from={tweenSettings.from} to={tweenSettings.to}>
+        <Heading
+          onClick={() => {
+            handleSelectedItem({ item, children });
+            disableScroll.on();
+          }}
+          as="h3"
+          fontSize="clamp(50px, 10vw, 50px)"
+          color="#cecece"
+          cursor="pointer"
+        >
+          {item.title}
+        </Heading>
+      </Tween>
     </Box>
   );
 };
