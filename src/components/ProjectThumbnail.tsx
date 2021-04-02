@@ -1,7 +1,7 @@
 import React from "react";
 import { Item, ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 interface ProjectThumbnailProps {
   item: Item;
@@ -20,7 +20,14 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
         disableScroll.on();
       }}
     >
-      <Text color="white">{item.title}</Text>
+      <Heading
+        as="h3"
+        fontSize="clamp(50px, 10vw, 50px)"
+        color="#cecece"
+        cursor="pointer"
+      >
+        {item.title}
+      </Heading>
     </Box>
   );
 };
