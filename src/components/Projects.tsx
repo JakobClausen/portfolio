@@ -11,16 +11,14 @@ export const Projects: React.FC = () => {
     setSelectedItem(item);
   };
   return (
-    <AnimateSharedLayout type="crossfade">
+    <>
       <ProjectList handleSelectedItem={handleSelectedItem} />
-      <AnimatePresence>
-        {selectedItem && (
-          <ProjectExpanded
-            projectInfo={selectedItem}
-            handleSelectedItem={handleSelectedItem}
-          />
-        )}
-      </AnimatePresence>
-    </AnimateSharedLayout>
+      {selectedItem && (
+        <ProjectExpanded
+          projectInfo={selectedItem}
+          handleSelectedItem={handleSelectedItem}
+        />
+      )}
+    </>
   );
 };

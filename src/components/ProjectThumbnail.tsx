@@ -1,38 +1,37 @@
 import React from "react";
 import { Item, ProjectInfo } from "../types/item";
 import disableScroll from "disable-scroll";
-import { motion } from "framer-motion";
+import { Box, Heading } from "@chakra-ui/react";
+import { Tween } from "react-gsap";
 
 interface ProjectThumbnailProps {
   item: Item;
   handleSelectedItem: (projectInfo: ProjectInfo) => void;
+  tweenSettings: { from: { x: string }; to: { x: string; ease: string } };
 }
 
 export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
   children,
   item,
   handleSelectedItem,
+  tweenSettings,
 }) => {
   return (
-    <motion.div
-      key={item.title}
-      onClick={() => {
-        handleSelectedItem({ item, children });
-        disableScroll.on();
-      }}
-      className="card-container"
-      layoutId={`card-container-${item.id}`}
-    >
-      <motion.div className="card-content" layoutId={`card-content-${item.id}`}>
-        <motion.div
-          className="portfolio-img"
-          layoutId={`portfolio-img-${item.id}`}
+    <Box mt={10}>
+      <Tween position={0} from={tweenSettings.from} to={tweenSettings.to}>
+        <Heading
+          onClick={() => {
+            handleSelectedItem({ item, children });
+            disableScroll.on();
+          }}
+          as="h3"
+          fontSize="clamp(50px, 10vw, 50px)"
+          color="#cecece"
+          cursor="pointer"
         >
-          <motion.p layoutId={`portfolio-img-text-${item.id}`}>
-            {children}
-          </motion.p>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+          {item.title}
+        </Heading>
+      </Tween>
+    </Box>
   );
 };

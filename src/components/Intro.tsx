@@ -10,7 +10,7 @@ export const Intro: React.FC = () => {
         top="0"
         left="0"
         right="0"
-        h="150px"
+        h="100px"
         bgGradient="linear(brand.100 35%, transparent 90%)"
         zIndex={9}
       />
