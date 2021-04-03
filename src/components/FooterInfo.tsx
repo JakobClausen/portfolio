@@ -13,7 +13,7 @@ export const FooterInfo: React.FC<FooterInfoProps> = ({ title, nodes }) => {
         {title}
       </Text>
       {nodes.map((node) => (
-        <Text fontFamily="body" fontSize="14px" m="8px 0px">
+        <Text key={node} fontFamily="body" fontSize="14px" m="8px 0px">
           {node}
         </Text>
       ))}

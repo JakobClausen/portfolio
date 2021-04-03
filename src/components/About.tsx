@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import { contact } from "../data/about";
+import { contact, skills, social } from "../data/about";
 import { FooterInfo } from "./FooterInfo";
 
 export const About: React.FC = () => {
@@ -33,7 +33,7 @@ export const About: React.FC = () => {
           w="200px"
         />
         <Box w="100%" pl="20px">
-          {["React", "Next", "Gatsby", "Node", "GraphQL", "SQL"].map((tech) => (
+          {skills.map((tech) => (
             <Text key={tech} fontFamily="body" color="#cecece">
               {tech}
             </Text>
@@ -49,7 +49,7 @@ export const About: React.FC = () => {
         </Text>
       </Box>
       <FooterInfo title={"Contact"} nodes={contact} />
-      <FooterInfo title={"Social"} nodes={contact} />
+      <FooterInfo title={"Social"} nodes={social} />
     </Box>
   );
 };
