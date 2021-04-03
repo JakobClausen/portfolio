@@ -1,4 +1,3 @@
-import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import { Item } from "../types/item";
 import { ProjectExpanded } from "./ProjectExpanded";

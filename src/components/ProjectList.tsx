@@ -13,19 +13,6 @@ interface ProjectListProps {
 export const ProjectList: React.FC<ProjectListProps> = ({
   handleSelectedItem,
 }) => {
-  const one = {
-    from: { x: "0%" },
-    to: { x: "20%", ease: "slow(0.7, 0.7, false)" },
-  };
-  const two = {
-    from: { x: "0%" },
-    to: { x: "30%", ease: "slow(0.7, 0.7, false)" },
-  };
-  const three = {
-    from: { x: "0%" },
-    to: { x: "40%", ease: "slow(0.7, 0.7, false)" },
-  };
-
   return (
     <Grid gap={4} p="0px 25px 25px 25px">
       <Controller>
@@ -38,24 +25,19 @@ export const ProjectList: React.FC<ProjectListProps> = ({
             <ProjectThumbnail
               item={data[0]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={one}
-            >
-              <span>this</span>.portfolio
-            </ProjectThumbnail>
+              width={"15%"}
+            />
             <ProjectThumbnail
               item={data[1]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={two}
-            >
-              Gym hub <br /> <span>frontend</span>
-            </ProjectThumbnail>
+              width={"35%"}
+            />
+
             <ProjectThumbnail
               item={data[2]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={three}
-            >
-              Gym hub <br /> <span>backend</span>
-            </ProjectThumbnail>
+              width={"50%"}
+            />
           </Timeline>
         </Scene>
       </Controller>
