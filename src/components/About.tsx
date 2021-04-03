@@ -2,29 +2,12 @@ import React from "react";
 import { Box, Flex, Image, Text, Divider } from "@chakra-ui/react";
 import { contact, skills, social } from "../data/about";
 import { FooterInfo } from "./FooterInfo";
+import { Category } from "./Category";
 
 export const About: React.FC = () => {
   return (
     <Box w="100%" p="25px" id="about-me">
-      <Flex alignItems="center">
-        <svg height="4px" width="15px">
-          <line
-            x1="0"
-            x2="100%"
-            stroke="#cecece"
-            style={{ strokeWidth: "4px" }}
-          />
-        </svg>
-        <Text
-          ml="7px"
-          fontFamily="body"
-          color="#cecece"
-          fontWeight="bold"
-          fontSize="18px"
-        >
-          About
-        </Text>
-      </Flex>
+      <Category title={"About"} />
       <Flex>
         <Image
           src="/images/jakob.jpeg"

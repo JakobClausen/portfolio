@@ -4,6 +4,7 @@ import { Timeline } from "react-gsap";
 import { Controller, Scene } from "react-scrollmagic";
 import { data } from "../data/projects";
 import { Item } from "../types/item";
+import { Category } from "./Category";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 
 interface ProjectListProps {
@@ -14,14 +15,15 @@ export const ProjectList: React.FC<ProjectListProps> = ({
   handleSelectedItem,
 }) => {
   return (
-    <Grid gap={4} p="0px 25px 25px 25px">
+    <Box gap={4} p="0px 25px" mb="40px" id="project-container">
+      <Category title={"Projects"} />
       <Controller>
         <Scene
           triggerHook="onEnter"
           duration="300%"
           triggerElement="#project-container"
         >
-          <Timeline paused wrapper={<Box id="project-container" />}>
+          <Timeline paused>
             <ProjectThumbnail
               item={data[0]}
               handleSelectedItem={handleSelectedItem}
@@ -41,6 +43,6 @@ export const ProjectList: React.FC<ProjectListProps> = ({
           </Timeline>
         </Scene>
       </Controller>
-    </Grid>
+    </Box>
   );
 };
