@@ -16,5 +16,3 @@ export type TechStack = {
   backgroundColor: string;
   borderStyle?: BorderStyle;
 };
-
-export type ProjectInfo = { item: Item; children: React.ReactNode };

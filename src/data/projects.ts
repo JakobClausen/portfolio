@@ -1,41 +1,7 @@
 export const data = [
   {
     id: 1,
-    title: "Portfolio",
-    description:
-      "This website is built with Next js in typescript. \n My goals was to try different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For styling i used Chakra ui components.",
-    techStack: [
-      {
-        title: "Next js",
-        icon: "/images/next.svg",
-        width: "50%",
-        backgroundColor: "#171717",
-        borderStyle: { borderBottomLeftRadius: 5, borderTopLeftRadius: 5 },
-      },
-      {
-        title: "Framer",
-        icon: "/images/motion.png",
-        width: "20%",
-        backgroundColor: "#E902B5",
-      },
-      {
-        title: "GSAP",
-        icon: "/images/gsap.svg",
-        width: "15%",
-        backgroundColor: "#86C03C",
-      },
-      {
-        title: "Scroll",
-        icon: "/images/scroll.png",
-        width: "15%",
-        backgroundColor: "#6186D5",
-        borderStyle: { borderBottomRightRadius: 5, borderTopRightRadius: 5 },
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Gym hub Frontend",
+    title: "Gym hub",
     description:
       "A service that help digitalize the gym / crossfit class experiense.\n Making a digital version of a whiteboard and timer, that makes it easy for instructors & class participants to understand the class structure.",
     techStack: [
@@ -68,8 +34,8 @@ export const data = [
     ],
   },
   {
-    id: 3,
-    title: "Gym hub Backend",
+    id: 2,
+    title: "Gym hub",
     description:
       "This is the backend / server for the Gym hub service. \n Written in Node js (typescript) & express, using Graphql as a query language. \n Typeorm as an ORM.",
     techStack: [
@@ -98,6 +64,40 @@ export const data = [
         icon: "/images/postgres.svg",
         width: "10%",
         backgroundColor: "#336791",
+        borderStyle: { borderBottomRightRadius: 5, borderTopRightRadius: 5 },
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Portfolio",
+    description:
+      "This website is built with Next js in typescript. \n My goals was to try different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For styling i used Chakra ui components.",
+    techStack: [
+      {
+        title: "Next js",
+        icon: "/images/next.svg",
+        width: "50%",
+        backgroundColor: "#171717",
+        borderStyle: { borderBottomLeftRadius: 5, borderTopLeftRadius: 5 },
+      },
+      {
+        title: "Framer",
+        icon: "/images/motion.png",
+        width: "20%",
+        backgroundColor: "#E902B5",
+      },
+      {
+        title: "GSAP",
+        icon: "/images/gsap.svg",
+        width: "15%",
+        backgroundColor: "#86C03C",
+      },
+      {
+        title: "Scroll",
+        icon: "/images/scroll.png",
+        width: "15%",
+        backgroundColor: "#6186D5",
         borderStyle: { borderBottomRightRadius: 5, borderTopRightRadius: 5 },
       },
     ],

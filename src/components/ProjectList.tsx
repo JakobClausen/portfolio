@@ -3,27 +3,18 @@ import React from "react";
 import { Timeline } from "react-gsap";
 import { Controller, Scene } from "react-scrollmagic";
 import { data } from "../data/projects";
-import { ProjectInfo } from "../types/item";
+import { Item } from "../types/item";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 
 interface ProjectListProps {
-  handleSelectedItem: (projectInfo: ProjectInfo | null) => void;
+  handleSelectedItem: (item: Item | null) => void;
 }
 
 export const ProjectList: React.FC<ProjectListProps> = ({
   handleSelectedItem,
 }) => {
-  const right = {
-    from: { x: "0%" },
-    to: { x: "50%", ease: "slow(0.7, 0.7, false)" },
-  };
-  const left = {
-    from: { x: "65%" },
-    to: { x: "0%", ease: "slow(0.7, 0.7, false)" },
-  };
-
   return (
-    <Grid gap={4} p="0px 50px 50px 50px" id="ye1">
+    <Grid gap={4} p="0px 25px 25px 25px">
       <Controller>
         <Scene
           triggerHook="onEnter"
@@ -34,24 +25,19 @@ export const ProjectList: React.FC<ProjectListProps> = ({
             <ProjectThumbnail
               item={data[0]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={right}
-            >
-              <span>this</span>.portfolio
-            </ProjectThumbnail>
+              width={"15%"}
+            />
             <ProjectThumbnail
               item={data[1]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={left}
-            >
-              Gym hub <br /> <span>frontend</span>
-            </ProjectThumbnail>
+              width={"35%"}
+            />
+
             <ProjectThumbnail
               item={data[2]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={right}
-            >
-              Gym hub <br /> <span>backend</span>
-            </ProjectThumbnail>
+              width={"50%"}
+            />
           </Timeline>
         </Scene>
       </Controller>

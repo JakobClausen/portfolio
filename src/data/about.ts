@@ -1,5 +1,5 @@
 export const contact = [
-  { name: "+46 722 522 880", link: "" },
+  { name: "+46 722 522 880", link: "tel:+46722522880" },
   { name: "Jakob.fridmar@gmail.com", link: "mailto:Jakob.fridmar@gmail.com" },
 ];
 export const social = [

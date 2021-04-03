@@ -1,37 +1,43 @@
 import React from "react";
-import { Item, ProjectInfo } from "../types/item";
+import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { Tween } from "react-gsap";
 
 interface ProjectThumbnailProps {
   item: Item;
-  handleSelectedItem: (projectInfo: ProjectInfo) => void;
+  handleSelectedItem: (item: Item) => void;
   tweenSettings: { from: { x: string }; to: { x: string; ease: string } };
+  width: string;
 }
 
 export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
-  children,
   item,
   handleSelectedItem,
-  tweenSettings,
+  width,
 }) => {
   return (
-    <Box mt={10}>
-      <Tween position={0} from={tweenSettings.from} to={tweenSettings.to}>
-        <Heading
-          onClick={() => {
-            handleSelectedItem({ item, children });
-            disableScroll.on();
-          }}
-          as="h3"
-          fontSize="clamp(50px, 10vw, 50px)"
-          color="#cecece"
-          cursor="pointer"
-        >
-          {item.title}
-        </Heading>
+    <Flex mt={10} alignItems="center">
+      <Tween
+        position={0}
+        from={{ width: 0, ease: "slow(0.7, 0.7, false)" }}
+        to={{ width, ease: "slow(0.7, 0.7, false)" }}
+      >
+        <Box height="3px" backgroundColor="#b33a0f" opacity={0.6} />
       </Tween>
-    </Box>
+      <Heading
+        onClick={() => {
+          handleSelectedItem(item);
+          disableScroll.on();
+        }}
+        ml="10px"
+        as="h3"
+        fontSize="clamp(50px, 10vw, 50px)"
+        color="#cecece"
+        cursor="pointer"
+      >
+        {item.title}
+      </Heading>
+    </Flex>
   );
 };

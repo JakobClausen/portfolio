@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ProjectInfo } from "../types/item";
+import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
 import { MotionP } from "./MotionP";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
 import { Box } from "@chakra-ui/react";
 
 interface ProjectExpandedProps {
-  projectInfo: ProjectInfo;
-  handleSelectedItem: (projectInfo: ProjectInfo | null) => void;
+  item: Item;
+  handleSelectedItem: (item: Item | null) => void;
 }
 
 const variants = {
@@ -17,11 +17,10 @@ const variants = {
 };
 
 export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
-  projectInfo,
+  item,
   handleSelectedItem,
 }) => {
   const [close, setClose] = useState(false);
-  const { item, children } = projectInfo;
   return (
     <motion.div
       className="card-container open"
@@ -60,7 +59,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           />
         </Box>
         <motion.div className="portfolio-img">
-          <motion.p>{children}</motion.p>
+          <motion.p>{item.title}</motion.p>
         </motion.div>
 
         <motion.div className="card-text">
