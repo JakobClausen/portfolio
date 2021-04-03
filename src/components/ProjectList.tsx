@@ -3,27 +3,31 @@ import React from "react";
 import { Timeline } from "react-gsap";
 import { Controller, Scene } from "react-scrollmagic";
 import { data } from "../data/projects";
-import { ProjectInfo } from "../types/item";
+import { Item } from "../types/item";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 
 interface ProjectListProps {
-  handleSelectedItem: (projectInfo: ProjectInfo | null) => void;
+  handleSelectedItem: (item: Item | null) => void;
 }
 
 export const ProjectList: React.FC<ProjectListProps> = ({
   handleSelectedItem,
 }) => {
-  const right = {
+  const one = {
     from: { x: "0%" },
-    to: { x: "50%", ease: "slow(0.7, 0.7, false)" },
+    to: { x: "20%", ease: "slow(0.7, 0.7, false)" },
   };
-  const left = {
-    from: { x: "65%" },
-    to: { x: "0%", ease: "slow(0.7, 0.7, false)" },
+  const two = {
+    from: { x: "0%" },
+    to: { x: "30%", ease: "slow(0.7, 0.7, false)" },
+  };
+  const three = {
+    from: { x: "0%" },
+    to: { x: "40%", ease: "slow(0.7, 0.7, false)" },
   };
 
   return (
-    <Grid gap={4} p="0px 50px 50px 50px" id="ye1">
+    <Grid gap={4} p="0px 25px 25px 25px">
       <Controller>
         <Scene
           triggerHook="onEnter"
@@ -34,21 +38,21 @@ export const ProjectList: React.FC<ProjectListProps> = ({
             <ProjectThumbnail
               item={data[0]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={right}
+              tweenSettings={one}
             >
               <span>this</span>.portfolio
             </ProjectThumbnail>
             <ProjectThumbnail
               item={data[1]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={left}
+              tweenSettings={two}
             >
               Gym hub <br /> <span>frontend</span>
             </ProjectThumbnail>
             <ProjectThumbnail
               item={data[2]}
               handleSelectedItem={handleSelectedItem}
-              tweenSettings={right}
+              tweenSettings={three}
             >
               Gym hub <br /> <span>backend</span>
             </ProjectThumbnail>

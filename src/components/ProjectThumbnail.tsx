@@ -1,17 +1,16 @@
 import React from "react";
-import { Item, ProjectInfo } from "../types/item";
+import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
 import { Box, Heading } from "@chakra-ui/react";
 import { Tween } from "react-gsap";
 
 interface ProjectThumbnailProps {
   item: Item;
-  handleSelectedItem: (projectInfo: ProjectInfo) => void;
+  handleSelectedItem: (item: Item) => void;
   tweenSettings: { from: { x: string }; to: { x: string; ease: string } };
 }
 
 export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
-  children,
   item,
   handleSelectedItem,
   tweenSettings,
@@ -21,7 +20,7 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
       <Tween position={0} from={tweenSettings.from} to={tweenSettings.to}>
         <Heading
           onClick={() => {
-            handleSelectedItem({ item, children });
+            handleSelectedItem(item);
             disableScroll.on();
           }}
           as="h3"

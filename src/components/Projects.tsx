@@ -1,13 +1,13 @@
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
-import { ProjectInfo } from "../types/item";
+import { Item } from "../types/item";
 import { ProjectExpanded } from "./ProjectExpanded";
 import { ProjectList } from "./ProjectList";
 
 export const Projects: React.FC = () => {
-  const [selectedItem, setSelectedItem] = useState<ProjectInfo | null>(null);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
-  const handleSelectedItem = (item: ProjectInfo | null) => {
+  const handleSelectedItem = (item: Item | null) => {
     setSelectedItem(item);
   };
   return (
@@ -15,7 +15,7 @@ export const Projects: React.FC = () => {
       <ProjectList handleSelectedItem={handleSelectedItem} />
       {selectedItem && (
         <ProjectExpanded
-          projectInfo={selectedItem}
+          item={selectedItem}
           handleSelectedItem={handleSelectedItem}
         />
       )}
