@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, Divider } from "@chakra-ui/react";
 import { contact, skills, social } from "../data/about";
 import { FooterInfo } from "./FooterInfo";
 
@@ -48,8 +48,20 @@ export const About: React.FC = () => {
           aspernatur.
         </Text>
       </Box>
-      <FooterInfo title={"Contact"} nodes={contact} />
-      <FooterInfo title={"Social"} nodes={social} />
+      <Box m="20px 0px">
+        <FooterInfo title={"Contact"} links={contact} />
+        <FooterInfo title={"Social"} links={social} />
+      </Box>
+      <Divider opacity={0.2} />
+      <Text
+        color="#cecece"
+        fontFamily="body"
+        fontSize="12px"
+        mt="12px"
+        opacity={0.2}
+      >
+        © 2021 JAKOBCLAUSEN.COM
+      </Text>
     </Box>
   );
 };
