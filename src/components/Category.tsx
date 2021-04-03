@@ -7,7 +7,7 @@ interface CategoryProps {
 
 export const Category: React.FC<CategoryProps> = ({ title }) => {
   return (
-    <Flex alignItems="center" opacity={0.8}>
+    <Flex alignItems="center" opacity={0.8} mb="10px">
       <Box h="2px" w="10px" backgroundColor="#cecece" />
       <Text
         ml="7px"

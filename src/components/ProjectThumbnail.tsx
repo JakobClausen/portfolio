@@ -7,17 +7,18 @@ import { Tween } from "react-gsap";
 interface ProjectThumbnailProps {
   item: Item;
   handleSelectedItem: (item: Item) => void;
-  tweenSettings: { from: { x: string }; to: { x: string; ease: string } };
   width: string;
+  mt?: number;
 }
 
 export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
   item,
   handleSelectedItem,
+  mt = 0,
   width,
 }) => {
   return (
-    <Flex mt={10} alignItems="center">
+    <Flex mt={mt} alignItems="center">
       <Tween
         position={0}
         from={{ width: 0, ease: "slow(0.7, 0.7, false)" }}

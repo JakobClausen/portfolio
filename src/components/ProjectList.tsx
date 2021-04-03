@@ -32,12 +32,14 @@ export const ProjectList: React.FC<ProjectListProps> = ({
             <ProjectThumbnail
               item={data[1]}
               handleSelectedItem={handleSelectedItem}
+              mt={35}
               width={"35%"}
             />
 
             <ProjectThumbnail
               item={data[2]}
               handleSelectedItem={handleSelectedItem}
+              mt={35}
               width={"50%"}
             />
           </Timeline>
