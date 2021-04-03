@@ -18,7 +18,7 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
   width,
 }) => {
   return (
-    <Flex mt={mt} alignItems="center">
+    <Flex mt={`${mt}px`} alignItems="center">
       <Tween
         position={0}
         from={{ width: 0, ease: "slow(0.7, 0.7, false)" }}

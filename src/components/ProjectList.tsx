@@ -15,7 +15,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({
   handleSelectedItem,
 }) => {
   return (
-    <Box gap={4} p="0px 25px" mb="40px" id="project-container">
+    <Box p="0px 25px" mb="40px" id="project-container">
       <Category title={"Projects"} />
       <Controller>
         <Scene
@@ -32,14 +32,14 @@ export const ProjectList: React.FC<ProjectListProps> = ({
             <ProjectThumbnail
               item={data[1]}
               handleSelectedItem={handleSelectedItem}
-              mt={35}
+              mt={48}
               width={"35%"}
             />
 
             <ProjectThumbnail
               item={data[2]}
               handleSelectedItem={handleSelectedItem}
-              mt={35}
+              mt={48}
               width={"50%"}
             />
           </Timeline>
