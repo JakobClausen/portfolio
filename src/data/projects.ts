@@ -1,4 +1,6 @@
-export const data = [
+import { Item } from "../types/item";
+
+export const data: Item[] = [
   {
     id: 1,
     title: "Gym hub",
