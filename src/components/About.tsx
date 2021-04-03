@@ -1,9 +1,11 @@
 import React from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { contact } from "../data/about";
+import { FooterInfo } from "./FooterInfo";
 
 export const About: React.FC = () => {
   return (
-    <Box w="100%" h="100vh" p="25px" id="about-me">
+    <Box w="100%" p="25px" id="about-me">
       <Flex alignItems="center">
         <svg height="4px" width="15px">
           <line
@@ -38,6 +40,16 @@ export const About: React.FC = () => {
           ))}
         </Box>
       </Flex>
+      <Box pt="20px">
+        <Text fontFamily="body" color="#cecece">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+          dicta natus amet, molestiae tenetur impedit aut incidunt quas sunt
+          provident sed minima quis porro modi culpa sequi omnis voluptas
+          aspernatur.
+        </Text>
+      </Box>
+      <FooterInfo title={"Contact"} nodes={contact} />
+      <FooterInfo title={"Social"} nodes={contact} />
     </Box>
   );
 };
