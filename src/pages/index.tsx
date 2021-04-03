@@ -18,11 +18,11 @@ const Home = () => {
           content="Jakob Clausen. Wed developer in Gothenburg. Focusing on backend technologies as graphql and node js. Writing in typescript."
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Varela&display=swap"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
           rel="stylesheet"
         />
         <link
