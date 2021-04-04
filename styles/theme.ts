@@ -9,15 +9,11 @@ const breakpoints = {
 };
 
 const colors = {
-  brand: {
-    100: "#1b1b1b",
-  },
+  brand: "#1b1b1b",
   text: {
-    100: "#FBF7EE",
+    main: "#cecece",
   },
-  offColor: {
-    100: "#E2C10A",
-  },
+  offColor: "#b33a0f",
 };
 
 const fonts = {

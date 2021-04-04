@@ -24,7 +24,7 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
         from={{ width: 0, ease: "slow(0.7, 0.7, false)" }}
         to={{ width, ease: "slow(0.7, 0.7, false)" }}
       >
-        <Box height="3px" backgroundColor="#b33a0f" opacity={0.6} />
+        <Box height="3px" backgroundColor="offColor" opacity={0.6} />
       </Tween>
       <Heading
         onClick={() => {
@@ -34,7 +34,7 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
         ml="10px"
         as="h3"
         fontSize="clamp(50px, 10vw, 50px)"
-        color="#cecece"
+        color="text.main"
         cursor="pointer"
       >
         {item.title}

@@ -8,11 +8,11 @@ interface CategoryProps {
 export const Category: React.FC<CategoryProps> = ({ title }) => {
   return (
     <Flex alignItems="center" opacity={0.8} mb="10px">
-      <Box h="2px" w="10px" backgroundColor="#cecece" />
+      <Box h="2px" w="10px" backgroundColor="text.main" />
       <Text
         ml="7px"
         fontFamily="body"
-        color="#cecece"
+        color="text.main"
         fontWeight="bold"
         fontSize="14px"
       >

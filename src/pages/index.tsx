@@ -7,7 +7,7 @@ import { About } from "../components/About";
 
 const Home = () => {
   return (
-    <Box w="100vw" bg="brand.100" overflow="hidden">
+    <Box w="100vw" bg="brand" overflow="hidden">
       <Head>
         <title>Jakob Clausen</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

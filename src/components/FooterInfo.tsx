@@ -9,7 +9,7 @@ interface FooterInfoProps {
 
 export const FooterInfo: React.FC<FooterInfoProps> = ({ title, links }) => {
   return (
-    <Box color="#cecece" mt="20px">
+    <Box color="text.main" mt="20px">
       <Text fontFamily="body" fontWeight="bold" fontSize="14px" m="8px 0px">
         {title}
       </Text>

@@ -17,14 +17,14 @@ export const About: React.FC = () => {
         />
         <Box w="100%" pl="20px">
           {skills.map((tech) => (
-            <Text key={tech} fontFamily="body" color="#cecece">
+            <Text key={tech} fontFamily="body" color="text.main">
               {tech}
             </Text>
           ))}
         </Box>
       </Flex>
       <Box pt="20px">
-        <Text fontFamily="body" color="#cecece">
+        <Text fontFamily="body" color="text.main">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
           dicta natus amet, molestiae tenetur impedit aut incidunt quas sunt
           provident sed minima quis porro modi culpa sequi omnis voluptas
@@ -37,7 +37,7 @@ export const About: React.FC = () => {
       </Box>
       <Divider opacity={0.2} />
       <Text
-        color="#cecece"
+        color="text.main"
         fontFamily="body"
         fontSize="12px"
         mt="12px"
