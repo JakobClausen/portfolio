@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
-import { MotionP } from "./MotionP";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
 import { Box, Link, Divider } from "@chakra-ui/react";
 import { CloseButton } from "./CloseButton";
@@ -56,10 +55,22 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           <CloseButton onClose={handleCloseProject} />
         </Box>
 
-        <Divider backgroundColor="#000000" opacity={1} />
+        <Box h="1px" w="100%" bg="#000000" opacity={0.8} />
 
         <motion.div className="card-text">
-          <MotionP className="card-text-description" payload={description} />
+          <motion.p
+            className="card-text-description"
+            transition={{
+              type: "spring",
+              delay: 0.2,
+              duration: 1,
+            }}
+            initial={{ y: 5, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {description}
+          </motion.p>
         </motion.div>
         <motion.div
           className="project-bottom-container"
