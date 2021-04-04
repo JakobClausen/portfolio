@@ -74,7 +74,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           exit={{ opacity: 0 }}
         >
           <ProjectTechTimeline techStack={techStack} />
-          <Box display="flex" justifyContent="center" mt="40px">
+          <Box display="flex" justifyContent="center" mt="20px">
             <Link
               href={link}
               isExternal

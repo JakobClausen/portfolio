@@ -1,7 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { background } from "@chakra-ui/styled-system";
 import { motion, MotionStyle } from "framer-motion";
-import React from "react";
 
 interface TimelineUnitProps {
   title: string;
