@@ -28,8 +28,8 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
             transition={{
               type: "spring",
               bounce: 0.5,
+              duration: 0.4,
               delay: 1.1,
-              duration: 1,
             }}
           />
         </Box>
@@ -39,8 +39,9 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
             animate={{ height: 20, opacity: 1 }}
             transition={{
               type: "spring",
-              bounce: 0.25,
-              delay: 0.8,
+              bounce: 0.5,
+              duration: 0.5,
+              delay: 0.9,
             }}
             style={{
               width: "1px",
