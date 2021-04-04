@@ -10,7 +10,7 @@ const breakpoints = {
 
 const colors = {
   brand: {
-    100: "#1C1919",
+    100: "#1b1b1b",
   },
   text: {
     100: "#FBF7EE",
