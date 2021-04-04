@@ -15,8 +15,13 @@ export const MotionP: React.FC<MotionPProps> = ({
     <motion.p
       {...props}
       className={className}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      transition={{
+        type: "spring",
+        delay: 0.2,
+        duration: 1,
+      }}
+      initial={{ y: 5, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       {payload}

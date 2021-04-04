@@ -40,27 +40,20 @@
   padding: 20px;
 }
 
-.portfolio-img {
+.portfolio-title {
   width: 100%;
   height: 180px;
-  background-color: rgb(39, 39, 39);
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.portfolio-img span {
-  color: green;
-}
-
-.portfolio-img p {
+.portfolio-title h3 {
   color: rgb(224, 224, 224);
-  font-family: "Ubuntu Mono";
+  font-family: "Bebas Neue";
   text-align: center;
-}
-
-.portfolio-img.open {
-  height: 230px;
+  font-size: 36px;
 }
 
 .card-text-title {

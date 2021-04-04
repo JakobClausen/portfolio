@@ -59,8 +59,17 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             exit={{ x: 50, opacity: 0 }}
           />
         </Box>
-        <motion.div className="portfolio-img">
-          <motion.p>{title}</motion.p>
+        <motion.div className="portfolio-title">
+          <motion.h3
+            transition={{
+              delay: 0.2,
+              duration: 0.3,
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            {title}
+          </motion.h3>
         </motion.div>
 
         <motion.div className="card-text">
