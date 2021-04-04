@@ -11,7 +11,7 @@ export const Intro: React.FC = () => {
         left="0"
         right="0"
         h="100px"
-        bgGradient="linear(brand.100 35%, transparent 90%)"
+        bgGradient="linear(brand 35%, transparent 90%)"
         zIndex={9}
       />
       <Controller>
@@ -52,14 +52,14 @@ export const Intro: React.FC = () => {
                     <Heading
                       as="h1"
                       fontSize="clamp(50px, 35vw, 200px)"
-                      color="#cecece"
+                      color="text.main"
                     >
                       JAKOB
                     </Heading>
                     <Heading
                       as="h1"
                       fontSize="clamp(3vw, 35vw, 200px)"
-                      color="#cecece"
+                      color="text.main"
                       marginTop="-60px"
                     >
                       CLAUSEN
@@ -77,7 +77,7 @@ export const Intro: React.FC = () => {
                     >
                       <Text
                         fontSize={["sm", "md", "lg", "xl"]}
-                        color="#b33a0f"
+                        color="offColor"
                         marginTop="-30px"
                         marginLeft="5px"
                       >
