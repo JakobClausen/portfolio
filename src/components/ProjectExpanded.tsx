@@ -77,19 +77,19 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
         >
           <ProjectTechTimeline techStack={item.techStack} />
           <Box display="flex" justifyContent="center" mt="40px">
-            <motion.img
-              src="/icons/github.svg"
-              alt="Github logo"
+            <motion.p
               className="github-icon"
               transition={{
                 type: "spring",
                 bounce: 0.25,
-                delay: 1.7,
+                delay: 1.3,
               }}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-            />
+            >
+              Github
+            </motion.p>
           </Box>
         </motion.div>
       </motion.div>

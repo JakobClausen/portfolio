@@ -89,8 +89,8 @@
   padding: 20px 20px 0px 20px;
 }
 .github-icon {
-  width: 45px;
   display: inline-block;
+  font-size: 16;
 }
 
 .card-text-github {
