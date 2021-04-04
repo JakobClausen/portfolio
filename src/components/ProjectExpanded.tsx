@@ -4,7 +4,7 @@ import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
 import { MotionP } from "./MotionP";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
-import { Box, Link } from "@chakra-ui/react";
+import { Box, Link, Divider } from "@chakra-ui/react";
 import { CloseButton } from "./CloseButton";
 
 interface ProjectExpandedProps {
@@ -33,17 +33,17 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
 
   return (
     <motion.div
-      className="card-container open"
+      className="card-container"
       transition={{ duration: 0.3 }}
       initial={{ y: "100%" }}
       animate={close ? "closed" : "open"}
       variants={variants}
       onAnimationComplete={handleAnimationComplete}
     >
-      <motion.div className="card-content open">
-        <CloseButton onClose={handleCloseProject} />
-        <motion.div className="portfolio-title">
+      <motion.div className="card-content">
+        <Box w="100%">
           <motion.h3
+            className="portfolio-title"
             transition={{
               delay: 0.2,
               duration: 0.3,
@@ -53,7 +53,10 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           >
             {title}
           </motion.h3>
-        </motion.div>
+          <CloseButton onClose={handleCloseProject} />
+        </Box>
+
+        <Divider backgroundColor="#000000" opacity={1} />
 
         <motion.div className="card-text">
           <MotionP className="card-text-description" payload={description} />
