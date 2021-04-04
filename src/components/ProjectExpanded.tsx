@@ -4,7 +4,7 @@ import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
 import { MotionP } from "./MotionP";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
-import { Box } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 
 interface ProjectExpandedProps {
   item: Item;
@@ -21,6 +21,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   handleSelectedItem,
 }) => {
   const [close, setClose] = useState(false);
+  const { title, description, link, techStack } = item;
   return (
     <motion.div
       className="card-container open"
@@ -59,15 +60,12 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           />
         </Box>
         <motion.div className="portfolio-img">
-          <motion.p>{item.title}</motion.p>
+          <motion.p>{title}</motion.p>
         </motion.div>
 
         <motion.div className="card-text">
-          <MotionP className="card-text-title open" payload={item.title} />
-          <MotionP
-            className="card-text-description"
-            payload={item.description}
-          />
+          <MotionP className="card-text-title open" payload={title} />
+          <MotionP className="card-text-description" payload={description} />
         </motion.div>
         <motion.div
           className="project-bottom-container"
@@ -75,21 +73,28 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <ProjectTechTimeline techStack={item.techStack} />
+          <ProjectTechTimeline techStack={techStack} />
           <Box display="flex" justifyContent="center" mt="40px">
-            <motion.p
-              className="github-icon"
-              transition={{
-                type: "spring",
-                bounce: 0.25,
-                delay: 1.3,
-              }}
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
+            <Link
+              href={link}
+              isExternal
+              cursor="pointer"
+              outline="none !important"
             >
-              Github
-            </motion.p>
+              <motion.p
+                className="github-icon"
+                transition={{
+                  type: "spring",
+                  bounce: 0.25,
+                  delay: 1.3,
+                }}
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 50, opacity: 0 }}
+              >
+                Github
+              </motion.p>
+            </Link>
           </Box>
         </motion.div>
       </motion.div>

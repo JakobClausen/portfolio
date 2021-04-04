@@ -6,6 +6,7 @@ export const data: Item[] = [
     title: "Gym hub",
     description:
       "A service that help digitalize the gym / crossfit class experiense.\n Making a digital version of a whiteboard and timer, that makes it easy for instructors & class participants to understand the class structure.",
+    link: "https://github.com/JakobClausen/ex-timer-web",
     techStack: [
       {
         title: "CRA",
@@ -40,6 +41,7 @@ export const data: Item[] = [
     title: "Gym hub",
     description:
       "This is the backend / server for the Gym hub service. \n Written in Node js (typescript) & express, using Graphql as a query language. \n Typeorm as an ORM.",
+    link: "https://github.com/JakobClausen/ex-timer-server",
     techStack: [
       {
         title: "Typescript",
@@ -75,6 +77,7 @@ export const data: Item[] = [
     title: "Portfolio",
     description:
       "This website is built with Next js in typescript. \n My goals was to try different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For styling i used Chakra ui components.",
+    link: "https://github.com/JakobClausen/portfolio",
     techStack: [
       {
         title: "Next js",
