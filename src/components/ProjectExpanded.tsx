@@ -5,6 +5,7 @@ import disableScroll from "disable-scroll";
 import { MotionP } from "./MotionP";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
 import { Box, Link } from "@chakra-ui/react";
+import { CloseButton } from "./CloseButton";
 
 interface ProjectExpandedProps {
   item: Item;
@@ -22,6 +23,14 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
 }) => {
   const [close, setClose] = useState(false);
   const { title, description, link, techStack } = item;
+
+  const handleCloseProject = () => {
+    setClose(true);
+    disableScroll.off();
+  };
+
+  const handleAnimationComplete = () => close && handleSelectedItem(null);
+
   return (
     <motion.div
       className="card-container open"
@@ -29,36 +38,10 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
       initial={{ y: "100%" }}
       animate={close ? "closed" : "open"}
       variants={variants}
-      onAnimationComplete={() => {
-        if (close) {
-          handleSelectedItem(null);
-        }
-      }}
+      onAnimationComplete={handleAnimationComplete}
     >
       <motion.div className="card-content open">
-        <Box
-          position="absolute"
-          top={0}
-          right={0}
-          onClick={() => {
-            setClose(true);
-            disableScroll.off();
-          }}
-        >
-          <motion.img
-            src="/icons/close.png"
-            alt="Close logo"
-            className="close-icon"
-            transition={{
-              type: "spring",
-              bounce: 0.25,
-              delay: 0.3,
-            }}
-            initial={{ x: 50, opacity: 0.5 }}
-            animate={{ x: 0, opacity: 0.8 }}
-            exit={{ x: 50, opacity: 0 }}
-          />
-        </Box>
+        <CloseButton onClose={handleCloseProject} />
         <motion.div className="portfolio-title">
           <motion.h3
             transition={{
