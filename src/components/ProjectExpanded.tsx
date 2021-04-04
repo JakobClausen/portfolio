@@ -64,7 +64,6 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
         </motion.div>
 
         <motion.div className="card-text">
-          <MotionP className="card-text-title open" payload={title} />
           <MotionP className="card-text-description" payload={description} />
         </motion.div>
         <motion.div
