@@ -3,18 +3,13 @@ import { motion } from "framer-motion";
 import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
-import { Box, Link, Divider } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 import { CloseButton } from "./CloseButton";
 
 interface ProjectExpandedProps {
   item: Item;
   handleSelectedItem: (item: Item | null) => void;
 }
-
-const variants = {
-  open: { y: 0 },
-  closed: { y: "100%" },
-};
 
 export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   item,
@@ -32,14 +27,13 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
 
   return (
     <motion.div
-      className="card-container"
+      className="portfolio-container"
       transition={{ duration: 0.3 }}
       initial={{ y: "100%" }}
-      animate={close ? "closed" : "open"}
-      variants={variants}
+      animate={close ? { y: "100%" } : { y: 0 }}
       onAnimationComplete={handleAnimationComplete}
     >
-      <motion.div className="card-content">
+      <motion.div className="portfolio-content">
         <Box w="100%">
           <motion.h3
             className="portfolio-title"
@@ -57,9 +51,9 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
 
         <Box h="1px" w="100%" bg="#000000" opacity={0.8} />
 
-        <motion.div className="card-text">
+        <motion.div className="portfolio-description">
           <motion.p
-            className="card-text-description"
+            className="portfolio-text-description"
             transition={{
               type: "spring",
               delay: 0.2,
@@ -67,7 +61,6 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             }}
             initial={{ y: 5, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            exit={{ opacity: 0 }}
           >
             {description}
           </motion.p>
@@ -76,18 +69,12 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           className="project-bottom-container"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
         >
           <ProjectTechTimeline techStack={techStack} />
           <Box display="flex" justifyContent="center" mt="20px">
-            <Link
-              href={link}
-              isExternal
-              cursor="pointer"
-              outline="none !important"
-            >
+            <Link href={link} isExternal cursor="pointer">
               <motion.p
-                className="github-icon"
+                className="github-link"
                 transition={{
                   type: "spring",
                   bounce: 0.25,
@@ -95,7 +82,6 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
                 }}
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                exit={{ y: 50, opacity: 0 }}
               >
                 Github
               </motion.p>

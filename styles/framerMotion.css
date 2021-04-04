@@ -1,4 +1,4 @@
-.card-container {
+.portfolio-container {
   bottom: 0;
   left: 0;
   right: 0;
@@ -11,14 +11,9 @@
   -webkit-box-shadow: -1px -4px 31px 0px rgba(0, 0, 0, 1);
   -moz-box-shadow: -1px -4px 31px 0px rgba(0, 0, 0, 1);
 }
-.card-content {
+.portfolio-content {
   width: 100%;
   height: 100%;
-}
-
-.card-text {
-  height: 100%;
-  width: 100%;
   padding: 20px;
 }
 
@@ -28,16 +23,21 @@
   font-size: 36px;
 }
 
-.card-text-title {
+.portfolio-description {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.portfolio-text-title {
   font-weight: bold;
   font-size: 14px;
 }
-.card-text-title.open {
+.portfolio-text-title.open {
   margin-bottom: 15px;
   font-size: 20px;
 }
 
-.card-text-description {
+.portfolio-description {
   font-size: 14px;
   white-space: pre-line;
 }
@@ -53,14 +53,9 @@
   bottom: 20px;
   padding: 20px 20px 0px 20px;
 }
-.github-icon {
+.github-link {
   display: inline-block;
   font-size: 16;
-}
-
-.card-text-github {
-  display: inline-block;
-  margin-left: 10px;
 }
 
 .close-icon {
