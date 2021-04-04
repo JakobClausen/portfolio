@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { background } from "@chakra-ui/styled-system";
 import { motion, MotionStyle } from "framer-motion";
 import React from "react";
@@ -19,13 +20,8 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
         width,
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "center" }}>
+      <Box display="flex" flexDirection="column">
+        <Box display="flex" justifyContent="center">
           <motion.img
             style={{ width: 30, height: 30, marginBottom: 10 }}
             src={icon}
@@ -34,31 +30,31 @@ export const TimelineUnit: React.FC<TimelineUnitProps> = ({
             transition={{
               type: "spring",
               bounce: 0.5,
-              delay: 1.3,
+              delay: 1.1,
               duration: 1,
             }}
           />
-        </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        </Box>
+        <Box display="flex" justifyContent="center">
           <motion.div
             initial={{ height: 0, opacity: 0.7 }}
-            animate={{ height: 25, opacity: 1 }}
+            animate={{ height: 20, opacity: 1 }}
             transition={{
               type: "spring",
               bounce: 0.25,
-              delay: 1,
+              delay: 0.8,
             }}
             style={{
               width: "1px",
               backgroundColor: restStyle.backgroundColor,
             }}
           />
-        </div>
-      </div>
+        </Box>
+      </Box>
       <motion.div
         style={{
           width: "100%",
-          height: "15px",
+          height: "8px",
           ...restStyle,
         }}
       />
