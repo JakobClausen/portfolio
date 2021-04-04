@@ -18,7 +18,7 @@ export const ProjectTechTimeline: React.FC<ProjectTechTimelineProps> = ({
       transition={{
         type: "spring",
         bounce: 0.25,
-        delay: 0.5,
+        delay: 0.3,
       }}
     >
       {techStack.map(({ title, borderStyle, width, icon, backgroundColor }) => (

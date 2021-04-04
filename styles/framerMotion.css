@@ -1,81 +1,43 @@
-.card-container {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-}
-
-.card-container.open {
+.portfolio-container {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 85%;
+  height: 100%;
   position: fixed;
-  z-index: 1;
+  background-color: rgb(226, 226, 226);
+  z-index: 100;
   overflow: hidden;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
   box-shadow: -1px -4px 31px 0px rgba(0, 0, 0, 1);
   -webkit-box-shadow: -1px -4px 31px 0px rgba(0, 0, 0, 1);
   -moz-box-shadow: -1px -4px 31px 0px rgba(0, 0, 0, 1);
 }
-.card-content {
+.portfolio-content {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-.card-content.open {
-  z-index: 20;
-}
-
-.card-img {
-  width: 100%;
-}
-
-.card-text {
-  background-color: rgb(226, 226, 226);
-  height: 100%;
-  width: 100%;
   padding: 20px;
 }
 
-.portfolio-img {
-  width: 100%;
-  height: 180px;
-  background-color: rgb(39, 39, 39);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.portfolio-img span {
-  color: green;
-}
-
-.portfolio-img p {
-  color: rgb(224, 224, 224);
-  font-family: "Ubuntu Mono";
+.portfolio-title {
+  font-family: "Bebas Neue";
   text-align: center;
+  font-size: 36px;
 }
 
-.portfolio-img.open {
-  height: 230px;
+.portfolio-description {
+  width: 100%;
+  padding-top: 20px;
 }
 
-.card-text-title {
+.portfolio-text-title {
   font-weight: bold;
   font-size: 14px;
 }
-.card-text-title.open {
+.portfolio-text-title.open {
   margin-bottom: 15px;
   font-size: 20px;
 }
 
-.card-text-description {
+.portfolio-description {
   font-size: 14px;
   white-space: pre-line;
 }
@@ -91,14 +53,9 @@
   bottom: 20px;
   padding: 20px 20px 0px 20px;
 }
-.github-icon {
-  width: 45px;
+.github-link {
   display: inline-block;
-}
-
-.card-text-github {
-  display: inline-block;
-  margin-left: 10px;
+  font-size: 16;
 }
 
 .close-icon {

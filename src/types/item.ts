@@ -2,6 +2,7 @@ export type Item = {
   id: number;
   title: string;
   description: string;
+  link: string;
   techStack: TechStack[];
 };
 
