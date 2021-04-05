@@ -9,8 +9,8 @@ interface FooterInfoProps {
 
 export const FooterInfo: React.FC<FooterInfoProps> = ({ title, links }) => {
   return (
-    <Box color="text.main" mt="20px">
-      <Text fontFamily="body" fontWeight="bold" fontSize="14px" m="8px 0px">
+    <Box color="text.main">
+      <Text fontFamily="body" fontWeight="bold" fontSize="14px" mb="8px">
         {title}
       </Text>
       {links.map(({ name, link }) => (
