@@ -28,13 +28,18 @@ export const About: React.FC = () => {
         />
         <Flex w="100%" pl="20px">
           <Box w="1px" h="100%" bg="offColor" mr="20px" />
-          <Flex flexDirection="column" justifyContent="space-between">
+          <Flex
+            flexDirection="column"
+            justifyContent="space-between"
+            alignItems="center"
+          >
             {skills.map((tech) => (
               <Text key={tech} fontFamily="body" color="text.main">
                 {tech}
               </Text>
             ))}
           </Flex>
+          <Box w="1px" h="100%" bg="offColor" ml="20px" />
         </Flex>
       </Flex>
       <Box pt={{ base: "20px", md: "0px" }}>
