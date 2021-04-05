@@ -47,7 +47,7 @@ export const Intro: React.FC = () => {
                 >
                   <Box
                     position={progress >= 1 ? "fixed" : "static"}
-                    top={-100}
+                    top="clamp(-160px, -27vw, -80px)"
                     zIndex={10}
                   >
                     <motion.h1
