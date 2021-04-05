@@ -1,6 +1,7 @@
 import { Box, Text, Heading, Flex } from "@chakra-ui/react";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
+import { motion } from "framer-motion";
 
 export const Intro: React.FC = () => {
   return (
@@ -49,40 +50,54 @@ export const Intro: React.FC = () => {
                     top={-100}
                     zIndex={10}
                   >
-                    <Heading
-                      as="h1"
-                      fontSize="clamp(50px, 35vw, 200px)"
-                      color="text.main"
+                    <motion.h1
+                      className="intro-title"
+                      transition={{
+                        type: "spring",
+                        delay: 0.3,
+                        duration: 0.5,
+                      }}
+                      initial={{ x: 300, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
                     >
                       JAKOB
-                    </Heading>
-                    <Heading
-                      as="h1"
-                      fontSize="clamp(3vw, 35vw, 200px)"
-                      color="text.main"
-                      marginTop="-60px"
+                    </motion.h1>
+                    <motion.h1
+                      className="intro-title"
+                      style={{ marginTop: "-60px" }}
+                      transition={{
+                        type: "spring",
+                        delay: 0.3,
+                        duration: 0.5,
+                      }}
+                      initial={{ x: -300, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
                     >
                       CLAUSEN
-                    </Heading>
+                    </motion.h1>
+
                     <Tween
                       position="0"
                       from={{
                         top: "0",
-                        scale: 1,
                       }}
                       to={{
                         top: "100%",
                         opacity: 0,
                       }}
                     >
-                      <Text
-                        fontSize={["sm", "md", "lg", "xl"]}
-                        color="offColor"
-                        marginTop="-30px"
-                        marginLeft="5px"
+                      <motion.p
+                        className="intro-undertitle "
+                        transition={{
+                          type: "spring",
+                          delay: 0.8,
+                          duration: 1,
+                        }}
+                        initial={{ y: 10, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
                       >
                         Full Stack Developer
-                      </Text>
+                      </motion.p>
                     </Tween>
                   </Box>
                 </Tween>

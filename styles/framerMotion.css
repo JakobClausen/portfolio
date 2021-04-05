@@ -75,3 +75,18 @@
   width: 15px;
   height: 15px;
 }
+
+.intro-title {
+  font-family: Bebas Neue;
+  font-weight: 700;
+  font-size: clamp(50px, 35vw, 200px);
+  line-height: 1.33;
+  color: #cecece;
+}
+
+.intro-undertitle {
+  font-size: clamp(10px, 4vw, 80px);
+  color: #b33a0f;
+  margin-top: -40px;
+  margin-left: 5px;
+}
