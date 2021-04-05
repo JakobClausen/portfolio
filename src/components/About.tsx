@@ -15,13 +15,16 @@ export const About: React.FC = () => {
           borderRadius="3px"
           w="200px"
         />
-        <Box w="100%" pl="20px">
-          {skills.map((tech) => (
-            <Text key={tech} fontFamily="body" color="text.main">
-              {tech}
-            </Text>
-          ))}
-        </Box>
+        <Flex w="100%" pl="20px">
+          <Box w="1px" h="100%" bg="offColor" mr="20px" />
+          <Flex flexDirection="column" justifyContent="space-between">
+            {skills.map((tech) => (
+              <Text key={tech} fontFamily="body" color="text.main">
+                {tech}
+              </Text>
+            ))}
+          </Flex>
+        </Flex>
       </Flex>
       <Box pt="20px">
         <Text fontFamily="body" color="text.main">
@@ -40,7 +43,7 @@ export const About: React.FC = () => {
         color="text.main"
         fontFamily="body"
         fontSize="12px"
-        mt="12px"
+        mt="20px"
         opacity={0.2}
       >
         © 2021 JAKOBCLAUSEN.COM
