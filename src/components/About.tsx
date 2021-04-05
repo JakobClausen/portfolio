@@ -23,7 +23,7 @@ export const About: React.FC = () => {
               src="/images/jakob.jpeg"
               alt="Jakob Clausen"
               borderRadius="3px"
-              w="200px"
+              w={{ base: "200px", md: "350px" }}
             />
             <Flex w="100%" pl="20px">
               <Box w="1px" h="100%" bg="offColor" mr="20px" />
