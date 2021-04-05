@@ -63,8 +63,7 @@ export const Intro: React.FC = () => {
                       JAKOB
                     </motion.h1>
                     <motion.h1
-                      className="intro-title"
-                      style={{ marginTop: "-60px" }}
+                      className="intro-title-lastname"
                       transition={{
                         type: "spring",
                         delay: 0.3,
