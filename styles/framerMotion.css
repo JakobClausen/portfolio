@@ -4,12 +4,12 @@
   right: 0;
   height: 100%;
   position: fixed;
-  background-color: rgb(226, 226, 226);
+  background-color: #cecece;
   z-index: 100;
   overflow: hidden;
-  box-shadow: -1px -4px 31px 0px rgba(0, 0, 0, 1);
-  -webkit-box-shadow: -1px -4px 31px 0px rgba(0, 0, 0, 1);
-  -moz-box-shadow: -1px -4px 31px 0px rgba(0, 0, 0, 1);
+  box-shadow: -1px -4px 31px 0px rgb(26, 26, 26);
+  -webkit-box-shadow: -1px -4px 31px 0px rgb(26, 26, 26);
+  -moz-box-shadow: -1px -4px 31px 0px rgb(26, 26, 26);
 }
 .portfolio-content {
   width: 100%;
@@ -54,8 +54,20 @@
   padding: 20px 20px 0px 20px;
 }
 .github-link {
-  display: inline-block;
-  font-size: 16;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  height: 40px;
+  background-color: #1b1b1b;
+}
+
+.motion-divider {
+  height: 1px;
+  width: 100%;
+  background-color: #1b1b1b;
+  opacity: 0.8;
 }
 
 .close-icon {

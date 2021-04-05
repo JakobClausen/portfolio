@@ -83,7 +83,7 @@ export const data: Item[] = [
         title: "Next js",
         icon: "/images/next.svg",
         width: "50%",
-        backgroundColor: "#171717",
+        backgroundColor: "#1b1b1b",
         borderStyle: { borderBottomLeftRadius: 5, borderTopLeftRadius: 5 },
       },
       {
