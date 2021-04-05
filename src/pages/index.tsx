@@ -30,7 +30,7 @@ const Home = () => {
           rel="stylesheet"
         />
       </Head>
-      <Box w="clam(35vw, 100vw, 80vw)">
+      <Box w={{ lg: "100vw", xl: "1400px" }}>
         <Intro />
         <Projects />
         <About />
