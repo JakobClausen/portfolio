@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
-import { Box, Link } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 import { CloseButton } from "./CloseButton";
 
 interface ProjectExpandedProps {
@@ -38,28 +38,38 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           <motion.h3
             className="portfolio-title"
             transition={{
+              type: "spring",
               delay: 0.2,
-              duration: 0.3,
+              duration: 1,
             }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
           >
             {title}
           </motion.h3>
           <CloseButton onClose={handleCloseProject} />
         </Box>
 
-        <Box h="1px" w="100%" bg="#000000" opacity={0.8} />
+        <motion.div
+          className="motion-divider"
+          transition={{
+            type: "spring",
+            delay: 0.3,
+            duration: 1,
+          }}
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        />
 
         <motion.div className="portfolio-description">
           <motion.p
             className="portfolio-text-description"
             transition={{
               type: "spring",
-              delay: 0.2,
+              delay: 0.4,
               duration: 1,
             }}
-            initial={{ y: 5, opacity: 0 }}
+            initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
             {description}
@@ -71,22 +81,20 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           animate={{ opacity: 1 }}
         >
           <ProjectTechTimeline techStack={techStack} />
-          <Box display="flex" justifyContent="center" mt="20px">
-            <Link href={link} isExternal cursor="pointer">
-              <motion.p
-                className="github-link"
-                transition={{
-                  type: "spring",
-                  bounce: 0.25,
-                  delay: 1.3,
-                }}
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-              >
-                Github
-              </motion.p>
-            </Link>
-          </Box>
+          <Link href={link} isExternal cursor="pointer">
+            <motion.div
+              className="github-link"
+              transition={{
+                type: "spring",
+                delay: 0.5,
+                duration: 1,
+              }}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+            >
+              <Text color="text.main">Github</Text>
+            </motion.div>
+          </Link>
         </motion.div>
       </motion.div>
     </motion.div>
