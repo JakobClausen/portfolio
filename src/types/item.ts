@@ -1,6 +1,7 @@
 export type Item = {
   id: number;
   title: string;
+  type: string | null;
   description: string;
   link: string;
   techStack: TechStack[];

@@ -1,7 +1,7 @@
 import React from "react";
 import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { Tween } from "react-gsap";
 
 interface ProjectThumbnailProps {
@@ -26,19 +26,25 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
       >
         <Box height="3px" backgroundColor="offColor" opacity={0.6} />
       </Tween>
-      <Heading
+      <Box
         onClick={() => {
           handleSelectedItem(item);
           disableScroll.on();
         }}
-        ml="10px"
-        as="h3"
-        fontSize="clamp(50px, 10vw, 50px)"
-        color="text.main"
         cursor="pointer"
       >
-        {item.title}
-      </Heading>
+        <Heading
+          ml="10px"
+          as="h3"
+          fontSize="clamp(50px, 10vw, 50px)"
+          color="text.main"
+        >
+          {item.title}
+        </Heading>
+        {item.type && (
+          <Text color="text.main" ml="20px" mt="-10px">{`- ${item.type}`}</Text>
+        )}
+      </Box>
     </Flex>
   );
 };
