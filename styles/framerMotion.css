@@ -100,7 +100,7 @@
   margin-left: 5px;
 }
 
-@media screen and (min-device-width: 481px) and (max-device-width: 600px) {
+@media screen and (min-width: 481px) and (max-width: 600px) {
   .intro-title-lastname {
     margin-top: -90px;
   }
@@ -109,7 +109,7 @@
   }
 }
 
-@media screen and (min-device-width: 600px) {
+@media screen and (min-width: 600px) {
   .intro-title-lastname {
     margin-top: -100px;
   }
@@ -118,7 +118,7 @@
   }
 }
 
-@media screen and (min-device-width: 800px) {
+@media only screen and (min-width: 800px) {
   .portfolio-container {
     width: 40vw;
   }

@@ -24,7 +24,8 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   };
 
   const handleAnimationComplete = () => close && handleSelectedItem(null);
-  const isMobile = screen.width < 800;
+  const isMobile = window.innerWidth < 800;
+  console.log(isMobile);
 
   const containerAnimateMobile = close ? { y: "100%" } : { y: 0 };
   const containerAnimateDektop = close ? { x: "100vw" } : { x: "60vw" };
