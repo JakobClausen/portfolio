@@ -12,3 +12,6 @@ export const social = [
   { name: "Github", link: "https://github.com/JakobClausen" },
 ];
 export const skills = ["React", "Next", "Gatsby", "Node", "GraphQL", "SQL"];
+
+export const description =
+  "Hello! I'm Jakob, a full stack developer from Gothenburg.\n My ";

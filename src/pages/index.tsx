@@ -30,7 +30,12 @@ const Home = () => {
           rel="stylesheet"
         />
       </Head>
-      <Box w={{ lg: "100vw", xl: "1400px" }}>
+      <Box
+        w={{
+          base: "100vw",
+          xl: "80vw",
+        }}
+      >
         <Intro />
         <Projects />
         <About />
