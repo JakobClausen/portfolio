@@ -6,7 +6,7 @@ export const data: Item[] = [
     title: "Gym hub",
     type: "Frontend",
     description:
-      "A service that help digitalize the gym / crossfit class experiense.\n Making a digital version of a whiteboard and timer, that makes it easy for instructors & class participants to understand the class structure.",
+      'A service that help digitalize the gym / crossfit class experiense.\n Making a digital version of a whiteboard and timer, that makes it easy for instructors and class participants to understand the class structure. \n \n This project started of as a simple timetracking app for gym classes, to easier keep the class in its timeframe. Link to the first version of this project "here" \n Now i have expanded on this idea, creating a digitalized version of the whiteboard ',
     link: "https://github.com/JakobClausen/ex-timer-web",
     techStack: [
       {
