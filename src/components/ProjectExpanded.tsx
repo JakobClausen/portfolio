@@ -51,8 +51,8 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             {title}
           </Heading>
           {item.type && <Text mt="-10px">{`${item.type}`}</Text>}
-          <CloseButton onClose={handleCloseProject} />
         </motion.div>
+        <CloseButton onClose={handleCloseProject} />
 
         <motion.div
           className="motion-divider"
