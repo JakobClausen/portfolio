@@ -47,7 +47,7 @@ export const Intro: React.FC = () => {
                 >
                   <Box
                     position={progress >= 1 ? "fixed" : "static"}
-                    top={-100}
+                    top="clamp(-160px, -27vw, -80px)"
                     zIndex={10}
                   >
                     <motion.h1
@@ -63,8 +63,7 @@ export const Intro: React.FC = () => {
                       JAKOB
                     </motion.h1>
                     <motion.h1
-                      className="intro-title"
-                      style={{ marginTop: "-60px" }}
+                      className="intro-title-lastname"
                       transition={{
                         type: "spring",
                         delay: 0.3,

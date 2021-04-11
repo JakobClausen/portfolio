@@ -24,13 +24,16 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   };
 
   const handleAnimationComplete = () => close && handleSelectedItem(null);
+  const isMobile = screen.width < 800;
 
+  const containerAnimateMobile = close ? { y: "100%" } : { y: 0 };
+  const containerAnimateDektop = close ? { x: "100vw" } : { x: "60vw" };
   return (
     <motion.div
       className="portfolio-container"
       transition={{ duration: 0.3 }}
-      initial={{ y: "100%" }}
-      animate={close ? { y: "100%" } : { y: 0 }}
+      initial={isMobile ? { y: "100%" } : { x: "100vw" }}
+      animate={isMobile ? containerAnimateMobile : containerAnimateDektop}
       onAnimationComplete={handleAnimationComplete}
     >
       <motion.div className="portfolio-content">

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 import { Intro } from "../components/Intro";
 import { Projects } from "../components/Projects";
@@ -7,7 +7,7 @@ import { About } from "../components/About";
 
 const Home = () => {
   return (
-    <Box w="100vw" bg="brand" overflow="hidden">
+    <Flex justifyContent="center" w="100vw" bg="brand" overflow="hidden">
       <Head>
         <title>Jakob Clausen</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -30,10 +30,12 @@ const Home = () => {
           rel="stylesheet"
         />
       </Head>
-      <Intro />
-      <Projects />
-      <About />
-    </Box>
+      <Box w={{ lg: "100vw", xl: "1400px" }}>
+        <Intro />
+        <Projects />
+        <About />
+      </Box>
+    </Flex>
   );
 };
 

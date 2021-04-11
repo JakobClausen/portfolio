@@ -84,9 +84,42 @@
   color: #cecece;
 }
 
+.intro-title-lastname {
+  font-family: Bebas Neue;
+  font-weight: 700;
+  font-size: clamp(50px, 35vw, 200px);
+  line-height: 1.33;
+  color: #cecece;
+  margin-top: -65px;
+}
+
 .intro-undertitle {
-  font-size: clamp(10px, 4vw, 80px);
+  font-size: clamp(10px, 4vw, 25px);
   color: #b33a0f;
   margin-top: -40px;
   margin-left: 5px;
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 600px) {
+  .intro-title-lastname {
+    margin-top: -90px;
+  }
+  .intro-undertitle {
+    margin-top: -50px;
+  }
+}
+
+@media screen and (min-device-width: 600px) {
+  .intro-title-lastname {
+    margin-top: -100px;
+  }
+  .intro-undertitle {
+    margin-top: -60px;
+  }
+}
+
+@media screen and (min-device-width: 800px) {
+  .portfolio-container {
+    width: 40vw;
+  }
 }
