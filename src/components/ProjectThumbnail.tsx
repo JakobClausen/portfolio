@@ -42,7 +42,9 @@ export const ProjectThumbnail: React.FC<ProjectThumbnailProps> = ({
           {item.title}
         </Heading>
         {item.type && (
-          <Text color="text.main" ml="20px" mt="-10px">{`- ${item.type}`}</Text>
+          <Text color="text.main" ml="20px" mt="-10px">
+            {item.type}
+          </Text>
         )}
       </Box>
     </Flex>

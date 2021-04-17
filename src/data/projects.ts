@@ -6,7 +6,7 @@ export const data: Item[] = [
     title: "Gym hub",
     type: "Frontend",
     description:
-      "A service that help digitalize the gym / crossfit class experiense.\n Making a digital version of a whiteboard and timer, that makes it easy for instructors & class participants to understand the class structure.",
+      'A service that help digitalize the gym / crossfit class experiense.\n Making a digital version of a whiteboard and timer, that makes it easy for instructors and class participants to understand the class structure. \n \n This project started of as a simple timetracking app for gym classes, to easier keep the class in its timeframe. Link to the first version of this project "here" \n Now i have expanded on this idea, creating a digitalized version of the whiteboard ',
     link: "https://github.com/JakobClausen/ex-timer-web",
     techStack: [
       {
@@ -42,7 +42,7 @@ export const data: Item[] = [
     title: "Gym hub",
     type: "Backend",
     description:
-      "This is the backend / server for the Gym hub service. \n Written in Node js (typescript) & express, using Graphql as a query language. \n Typeorm as an ORM.",
+      "This is the backend / server for the Gym hub service. \n\n Written in Node js & express, using Graphql as a query language. \n\n I went with a SDL type of approach for defining my graphql layer and used a library called type-graphql to defined my schemas and resolvers, this worked really good together with my ORM of choice Type-ORM. Both use classes and decorators. \nAs a database a went with PostgreSQL (Open-source FTW).",
     link: "https://github.com/JakobClausen/ex-timer-server",
     techStack: [
       {
@@ -79,7 +79,7 @@ export const data: Item[] = [
     title: "Portfolio",
     type: null,
     description:
-      "This website is built with Next js in typescript. \n My goals was to try different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For styling i used Chakra ui components.",
+      "This website is built with Next js in typescript. \n\n My goals was to try different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For styling i used Chakra ui components. \n\n I plan on adding a article section in the future, for me to write about some of the topics i'm passioned about. Along with an article section i'm also planing on adding a CMS system.",
     link: "https://github.com/JakobClausen/portfolio",
     techStack: [
       {

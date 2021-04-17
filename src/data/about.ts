@@ -12,3 +12,6 @@ export const social = [
   { name: "Github", link: "https://github.com/JakobClausen" },
 ];
 export const skills = ["React", "Next", "Gatsby", "Node", "GraphQL", "SQL"];
+
+export const description =
+  "I'm Jakob, a full stack developer currently based in Gothenburg, Sweden. \nI really enjoy creating software and being creative. \nSetting up the architectural part of a software is what's really excites me, but i do have a design part of me that i need to feed occasionally with some animations.";

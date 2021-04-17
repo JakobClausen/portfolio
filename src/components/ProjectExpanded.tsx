@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Box, Heading, Link, Text } from "@chakra-ui/react";
 import { CloseButton } from "./CloseButton";
 
 interface ProjectExpandedProps {
@@ -37,21 +37,22 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
       onAnimationComplete={handleAnimationComplete}
     >
       <motion.div className="portfolio-content">
-        <Box w="100%">
-          <motion.h3
-            className="portfolio-title"
-            transition={{
-              type: "spring",
-              delay: 0.2,
-              duration: 1,
-            }}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-          >
+        <motion.div
+          className="portfolio-title"
+          transition={{
+            type: "spring",
+            delay: 0.2,
+            duration: 1,
+          }}
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
+          <Heading as="h4" fontSize="36px">
             {title}
-          </motion.h3>
-          <CloseButton onClose={handleCloseProject} />
-        </Box>
+          </Heading>
+          {item.type && <Text mt="-10px">{`${item.type}`}</Text>}
+        </motion.div>
+        <CloseButton onClose={handleCloseProject} />
 
         <motion.div
           className="motion-divider"

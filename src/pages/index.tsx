@@ -7,7 +7,7 @@ import { About } from "../components/About";
 
 const Home = () => {
   return (
-    <Flex justifyContent="center" w="100vw" bg="brand" overflow="hidden">
+    <Flex justifyContent="center" bg="brand" overflow="hidden">
       <Head>
         <title>Jakob Clausen</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -30,7 +30,12 @@ const Home = () => {
           rel="stylesheet"
         />
       </Head>
-      <Box w={{ lg: "100vw", xl: "1400px" }}>
+      <Box
+        w={{
+          base: "100vw",
+          xl: "80vw",
+        }}
+      >
         <Intro />
         <Projects />
         <About />

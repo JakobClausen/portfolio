@@ -4,7 +4,7 @@
   right: 0;
   height: 100%;
   position: fixed;
-  background-color: #cecece;
+  background-color: #e4e4e4;
   z-index: 100;
   overflow: hidden;
   box-shadow: -1px -4px 31px 0px rgb(26, 26, 26);
@@ -18,9 +18,8 @@
 }
 
 .portfolio-title {
-  font-family: "Bebas Neue";
+  width: 100%;
   text-align: center;
-  font-size: 36px;
 }
 
 .portfolio-description {
