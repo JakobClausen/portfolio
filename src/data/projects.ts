@@ -79,7 +79,7 @@ export const data: Item[] = [
     title: "Portfolio",
     type: null,
     description:
-      "This website is built with Next js in typescript. \n My goals was to try different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For styling i used Chakra ui components.",
+      "This website is built with Next js in typescript. \n\n My goals was to try different types of animations, like the Scroll magic logo animation. Some of the libs I use is Framer motion, Scroll magic, GSAP 3. \n For styling i used Chakra ui components. \n\n I plan on adding a article section in the future, for me to write about some of the topics i'm passioned about. Along with an article section i'm also planing on adding a CMS system.",
     link: "https://github.com/JakobClausen/portfolio",
     techStack: [
       {
