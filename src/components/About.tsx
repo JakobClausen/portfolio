@@ -16,15 +16,17 @@ export const About: React.FC = () => {
   return (
     <Box w="100%" p="25px" id="about-me">
       <Category title={"About"} />
-      <Box p="0px 20px 20px 0px" display={{ base: "block", lg: "flex" }}>
+      <Box display={{ base: "block", lg: "flex" }}>
         <Flex>
-          <Image
-            src="/images/jakob.jpeg"
-            alt="Jakob Clausen"
-            borderRadius="3px"
-            w={{ base: "200px", sm: "350px" }}
-          />
-          <Flex p="0px 20px">
+          <Box w={{ base: "250px", sm: "350px" }}>
+            <Image
+              src="/images/jakob.jpeg"
+              alt="Jakob Clausen"
+              borderRadius="3px"
+              w="100%"
+            />
+          </Box>
+          <Flex pl="20px">
             <Box w="1px" h="100%" bg="offColor" mr="20px" />
             <Flex
               flexDirection="column"
@@ -40,7 +42,7 @@ export const About: React.FC = () => {
             <Box w="1px" h="100%" bg="offColor" ml="20px" />
           </Flex>
         </Flex>
-        <Box pt={{ base: "20px", lg: "0px" }}>
+        <Box pl={{ base: "0px", lg: "20px" }} pt={{ base: "20px", lg: "0px" }}>
           <Text fontFamily="body" color="text.main">
             {description}
           </Text>
