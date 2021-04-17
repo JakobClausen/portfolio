@@ -33,7 +33,8 @@ const Home = () => {
       <Box
         w={{
           base: "100vw",
-          xl: "65vw",
+          xl: "68vw",
+          xxxl: "55vw",
         }}
       >
         <Intro />
