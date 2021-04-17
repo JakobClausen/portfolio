@@ -6,7 +6,7 @@ const breakpoints = {
   lg: "62em",
   xl: "80em",
   xxl: "96em",
-  xxxl: "110em",
+  xxxl: "120em",
 };
 
 const colors = {
