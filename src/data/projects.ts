@@ -42,7 +42,7 @@ export const data: Item[] = [
     title: "Gym hub",
     type: "Backend",
     description:
-      "This is the backend / server for the Gym hub service. \n Written in Node js (typescript) & express, using Graphql as a query language. \n Typeorm as an ORM.",
+      "This is the backend / server for the Gym hub service. \n\n Written in Node js & express, using Graphql as a query language. \n\n I went with a SDL type of approach for defining my graphql layer and used a library called type-graphql to defined my schemas and resolvers, this worked really good together with my ORM of choice Type-ORM. Both use classes and decorators. \nAs a database a went with PostgreSQL (Open-source FTW).",
     link: "https://github.com/JakobClausen/ex-timer-server",
     techStack: [
       {
