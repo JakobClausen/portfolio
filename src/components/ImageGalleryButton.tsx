@@ -16,6 +16,7 @@ export const ImageGalleryButton: React.FC<ImageGalleryButtonProps> = ({
       borderRadius="30px"
       w="40px"
       h="40px"
+      m="0px 10px"
       justify="center"
       alignItems="center"
       userSelect="none"

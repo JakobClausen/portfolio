@@ -39,14 +39,23 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({}) => {
   const swipeConfidenceThreshold = 10000;
   const [[page, direction], setPage] = useState([0, 0]);
   const imageIndex = wrap(0, images.length, page);
+  const imgRef = useRef(null);
+  const [height, setHeight] = useState(0);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
+  useEffect(() => {
+    if (imgRef) {
+      setHeight(imgRef?.current?.offsetHeight);
+    }
+  }, [imgRef]);
+
   return (
-    <Box width="100%" position="relative">
+    <Box width="100%" position="relative" mt="10px" h={`${height}px`}>
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
+          ref={imgRef}
           className="gallery-img"
           key={page}
           src={images[imageIndex]}
@@ -73,12 +82,17 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({}) => {
           }}
         />
       </AnimatePresence>
-      <Flex justify="space-between">
+      <Flex
+        justify="space-between"
+        w="100%"
+        position="absolute"
+        top="calc(50% - 20px)"
+      >
         <ImageGalleryButton
-          handleClick={() => paginate(1)}
+          handleClick={() => paginate(-1)}
           transform="scale(-1)"
         />
-        <ImageGalleryButton handleClick={() => paginate(-1)} />
+        <ImageGalleryButton handleClick={() => paginate(1)} />
       </Flex>
     </Box>
   );
