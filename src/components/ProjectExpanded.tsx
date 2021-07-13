@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import { Item } from "../types/item";
 import disableScroll from "disable-scroll";
 import { ProjectTechTimeline } from "./ProjectTechTimeline";
-import { Box, Heading, Link, Text } from "@chakra-ui/react";
+import { Heading, Link, Text } from "@chakra-ui/react";
 import { CloseButton } from "./CloseButton";
+import { ImageGallery } from "./ImageGallery";
 
 interface ProjectExpandedProps {
   item: Item;
@@ -79,6 +80,9 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             {description}
           </motion.p>
         </motion.div>
+
+        <ImageGallery />
+
         <motion.div
           className="project-bottom-container"
           initial={{ opacity: 0 }}
@@ -101,6 +105,6 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           </Link>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </motion.div >
   );
 };

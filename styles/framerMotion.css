@@ -99,6 +99,29 @@
   margin-left: 5px;
 }
 
+/* img slide */
+.gallery-img {
+  position: absolute;
+  max-width: 100%;
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* img slide */
+
 @media screen and (min-width: 481px) and (max-width: 600px) {
   .intro-title-lastname {
     margin-top: -90px;
