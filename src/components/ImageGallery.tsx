@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from 'popmotion';
 import { Box, Flex } from '@chakra-ui/react';
+import { ImageGalleryButton } from './ImageGalleryButton';
 
 interface ImageGalleryProps {}
 const images = [
@@ -31,42 +32,21 @@ const variants = {
   },
 };
 
-/**
- * Experimenting with distilling swipe offset and velocity into a single variable, so the
- * less distance a user has swiped, the more velocity they need to register as a swipe.
- * Should accomodate longer swipes and short flicks without having binary checks on
- * just distance thresholds and velocity > 0.
- */
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
-};
-
 export const ImageGallery: React.FC<ImageGalleryProps> = ({}) => {
+  const swipePower = (offset: number, velocity: number) => {
+    return Math.abs(offset) * velocity;
+  };
+  const swipeConfidenceThreshold = 10000;
   const [[page, direction], setPage] = useState([0, 0]);
-  const [height, setHeight] = useState(0);
-  const reference = useRef(null);
   const imageIndex = wrap(0, images.length, page);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
-
-  useEffect(() => {
-    if (reference) {
-      console.log(reference?.current.offsetHeight);
-      setHeight(reference?.current?.offsetHeight);
-    }
-  }, [reference]);
-
-  useEffect(() => {
-    console.log('height', height);
-  }, [height]);
   return (
-    <Box width="100%" position="relative" h="auto">
+    <Box width="100%" position="relative">
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
-          ref={reference}
           className="gallery-img"
           key={page}
           src={images[imageIndex]}
@@ -94,39 +74,11 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({}) => {
         />
       </AnimatePresence>
       <Flex justify="space-between">
-        <Flex
-          bg="white"
-          borderRadius="30px"
-          w="40px"
-          h="40px"
-          justify="center"
-          alignItems="center"
-          userSelect="none"
-          cursor="pointer"
-          fontWeight="bold"
-          fontSize="18px"
+        <ImageGalleryButton
+          handleClick={() => paginate(1)}
           transform="scale(-1)"
-          zIndex={2}
-          onClick={() => paginate(1)}
-        >
-          {'‣'}
-        </Flex>
-        <Flex
-          bg="white"
-          borderRadius="30px"
-          w="40px"
-          h="40px"
-          justify="center"
-          alignItems="center"
-          userSelect="none"
-          cursor="pointer"
-          fontWeight="bold"
-          fontSize="18px"
-          zIndex={2}
-          onClick={() => paginate(-1)}
-        >
-          {'‣'}
-        </Flex>
+        />
+        <ImageGalleryButton handleClick={() => paginate(-1)} />
       </Flex>
     </Box>
   );
