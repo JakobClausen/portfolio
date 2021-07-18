@@ -25,6 +25,8 @@
 .portfolio-description {
   width: 100%;
   padding-top: 20px;
+  font-size: 14px;
+  white-space: pre-line;
 }
 
 .portfolio-text-title {
@@ -34,11 +36,6 @@
 .portfolio-text-title.open {
   margin-bottom: 15px;
   font-size: 20px;
-}
-
-.portfolio-description {
-  font-size: 14px;
-  white-space: pre-line;
 }
 
 .timeline-container {

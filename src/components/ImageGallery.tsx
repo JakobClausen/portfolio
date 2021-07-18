@@ -52,7 +52,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({}) => {
   }, [imgRef]);
 
   return (
-    <Box width="100%" position="relative" mt="10px" h={`${height}px`}>
+    <Box width="100%" position="relative" m="30px 0px" h={`${height}px`}>
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           ref={imgRef}
