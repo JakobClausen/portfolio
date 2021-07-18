@@ -52,7 +52,17 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({}) => {
   }, [imgRef]);
 
   return (
-    <Box width="100%" position="relative" m="30px 0px" h={`${height}px`}>
+    <motion.div
+      className="project-image-gallery"
+      style={{ height: `${height}px` }}
+      transition={{
+        type: 'spring',
+        delay: 0.6,
+        duration: 0.8,
+      }}
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+    >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           ref={imgRef}
@@ -94,6 +104,6 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({}) => {
         />
         <ImageGalleryButton handleClick={() => paginate(1)} />
       </Flex>
-    </Box>
+    </motion.div>
   );
 };

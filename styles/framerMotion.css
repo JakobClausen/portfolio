@@ -38,6 +38,12 @@
   font-size: 20px;
 }
 
+.project-image-gallery {
+  width: 100%;
+  position: relative;
+  margin: 30px 0px;
+}
+
 .timeline-container {
   margin-bottom: 20px;
 }
