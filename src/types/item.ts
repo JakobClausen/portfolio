@@ -5,6 +5,7 @@ export type Item = {
   description: string;
   link: string;
   techStack: TechStack[];
+  images?: string[];
 };
 
 type BorderStyle =
