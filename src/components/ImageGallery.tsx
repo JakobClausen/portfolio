@@ -36,7 +36,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   const swipeConfidenceThreshold = 10000;
   const [[page, direction], setPage] = useState([0, 0]);
   const imageIndex = wrap(0, images.length, page);
-  const imgRef = useRef(null);
+  const imgRef = useRef<null | HTMLImageElement>(null);
   const [height, setHeight] = useState<null | number>(null);
   const [showButtons, setShowButtons] = useState(false);
 
@@ -45,7 +45,8 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
 
   useEffect(() => {
     if (imgRef) {
-      setHeight(imgRef?.current?.offsetHeight);
+      const height = imgRef?.current?.offsetHeight!;
+      setHeight(height);
       if (!showButtons) {
         setTimeout(() => {
           setShowButtons(true);
