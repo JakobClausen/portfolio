@@ -8,7 +8,7 @@ interface CloseButtonProps {
 
 export const CloseButton: React.FC<CloseButtonProps> = ({ onClose }) => {
   return (
-    <Box position="absolute" top={0} right={0} onClick={onClose}>
+    <Box position="absolute" top={0} right={0} onClick={onClose} cursor="pointer">
       <motion.img
         src="/icons/close.png"
         alt="Close logo"

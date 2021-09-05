@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Item } from "../types/item";
-import disableScroll from "disable-scroll";
-import { ProjectTechTimeline } from "./ProjectTechTimeline";
-import { Box, Heading, Link, Text } from "@chakra-ui/react";
-import { CloseButton } from "./CloseButton";
+import { Heading, Link, Text } from '@chakra-ui/react';
+import disableScroll from 'disable-scroll';
+import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { Item } from '../types/item';
+import { CloseButton } from './CloseButton';
+import { ImageGallery } from './ImageGallery';
+import { ProjectTechTimeline } from './ProjectTechTimeline';
 
 interface ProjectExpandedProps {
   item: Item;
@@ -16,7 +17,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   handleSelectedItem,
 }) => {
   const [close, setClose] = useState(false);
-  const { title, description, link, techStack } = item;
+  const { title, description, link, techStack, images } = item;
 
   const handleCloseProject = () => {
     setClose(true);
@@ -26,13 +27,13 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
   const handleAnimationComplete = () => close && handleSelectedItem(null);
   const isMobile = window && window.innerWidth < 800;
 
-  const containerAnimateMobile = close ? { y: "100%" } : { y: 0 };
-  const containerAnimateDektop = close ? { x: "100vw" } : { x: "60vw" };
+  const containerAnimateMobile = close ? { y: '100%' } : { y: 0 };
+  const containerAnimateDektop = close ? { x: '100vw' } : { x: '60vw' };
   return (
     <motion.div
       className="portfolio-container"
       transition={{ duration: 0.3 }}
-      initial={isMobile ? { y: "100%" } : { x: "100vw" }}
+      initial={isMobile ? { y: '100%' } : { x: '100vw' }}
       animate={isMobile ? containerAnimateMobile : containerAnimateDektop}
       onAnimationComplete={handleAnimationComplete}
     >
@@ -40,7 +41,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
         <motion.div
           className="portfolio-title"
           transition={{
-            type: "spring",
+            type: 'spring',
             delay: 0.2,
             duration: 1,
           }}
@@ -57,7 +58,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
         <motion.div
           className="motion-divider"
           transition={{
-            type: "spring",
+            type: 'spring',
             delay: 0.3,
             duration: 1,
           }}
@@ -69,7 +70,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
           <motion.p
             className="portfolio-text-description"
             transition={{
-              type: "spring",
+              type: 'spring',
               delay: 0.4,
               duration: 1,
             }}
@@ -79,6 +80,8 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             {description}
           </motion.p>
         </motion.div>
+        {images && <ImageGallery images={images} />}
+
         <motion.div
           className="project-bottom-container"
           initial={{ opacity: 0 }}
@@ -89,7 +92,7 @@ export const ProjectExpanded: React.FC<ProjectExpandedProps> = ({
             <motion.div
               className="github-link"
               transition={{
-                type: "spring",
+                type: 'spring',
                 delay: 0.5,
                 duration: 1,
               }}
