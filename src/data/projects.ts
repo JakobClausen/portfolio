@@ -37,9 +37,8 @@ export const data: Item[] = [
       },
     ],
     images: [
-      'https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png',
-      'https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png',
-      'https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png',
+      'https://camo.githubusercontent.com/1b37f8ac4964f9fb39deeae37e7f6e1f94b1e4e780d5dfb7babac4d05202a034/68747470733a2f2f692e6962622e636f2f7a366e597946732f53637265656e73686f742d323032302d31312d32302d61742d31302d35392d31332e706e67',
+      'https://camo.githubusercontent.com/147a439c2e2cc3eee88c104c9a1163d131c3cbaff9a370adf9ce132d1576e044/68747470733a2f2f692e6962622e636f2f485848683871342f6261636b6f66666963652e706e67',
     ],
   },
   {
