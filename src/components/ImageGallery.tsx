@@ -37,28 +37,25 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const imageIndex = wrap(0, images.length, page);
   const imgRef = useRef<null | HTMLImageElement>(null);
-  const [height, setHeight] = useState<null | number>(null);
   const [showButtons, setShowButtons] = useState(false);
+  const [height, setHeight] = useState<null | number>(null);
 
   const paginate = (newDirection: number) =>
     setPage([page + newDirection, newDirection]);
 
   useEffect(() => {
-    if (imgRef) {
-      const height = imgRef?.current?.offsetHeight!;
-      setHeight(height);
-      if (!showButtons) {
-        setTimeout(() => {
-          setShowButtons(true);
-        }, 500);
+    const timeout = setTimeout(() => {
+      if (imgRef?.current?.offsetHeight) {
+        setHeight(imgRef?.current?.offsetHeight);
       }
-    }
+      setShowButtons(true);
+    }, 1000);
+    return () => clearTimeout(timeout);
   }, [imgRef]);
 
   return (
     <motion.div
       className="project-image-gallery"
-      style={{ height: `${height ?? imgRef?.current?.offsetHeight}px` }}
       transition={{
         type: 'spring',
         delay: 0.6,
@@ -97,13 +94,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         />
       </AnimatePresence>
       {showButtons && (
-        <Flex
-          justify="space-between"
-          w="100%"
-          h="100%"
-          position="absolute"
-          top="calc(50% - 20px)"
-        >
+        <Flex justify="space-between" alignItems="center" w="100%" h={height}>
           <ImageGalleryButton
             handleClick={() => paginate(-1)}
             transform="scale(-1)"
