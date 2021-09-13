@@ -93,7 +93,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           }}
         />
       </AnimatePresence>
-      {showButtons && (
+      {showButtons && height && (
         <Flex justify="space-between" alignItems="center" w="100%" h={height}>
           <ImageGalleryButton
             handleClick={() => paginate(-1)}
